@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F5F7;
+    color: #1D1D1F;
+    overflow-x: hidden;
+}
+
+
+.glass-nav {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* Navigation Link Hover Animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #800000;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(128, 0, 0, 0.3);
+}
+
+/* Dark Mode - Navigation */
+body.dark-mode .nav-link::after {
+    background: #FF6B6B;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #FF6B6B !important;
+}
+
+body.dark-mode .nav-btn {
+    background-color: #FF6B6B;
+}
+
+body.dark-mode .nav-btn:hover {
+    background-color: #FF8E8E;
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+}
+
+
+.blob-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: blob-morph 8s ease-in-out infinite;
+}
+
+@keyframes blob-morph {
+    0%, 100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
+
+.project-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(128, 0, 0, 0.15);
+    border-color: rgba(128, 0, 0, 0.1);
+}
+
+.skill-card:hover .w-16 {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background: #800000;
+    border-radius: 50%;
+    border: 3px solid #F5F5F7;
+}
+
+
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typing Cursor */
+.typing-cursor {
+    color: #800000;
+    font-weight: 300;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #800000, #a00000);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #800000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #600000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(128, 0, 0, 0.4);
+}
+
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: #1D1D1F;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+
+.gradient-text {
+    background: linear-gradient(135deg, #800000 0%, #a00000 50%, #600000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+@media (max-width: 374px) {
+    .hero-title {
+        font-size: 2.25rem !important;
+    }
+    .hero-subtitle {
+        font-size: 1.25rem !important;
+    }
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+    .blob-shape {
+        width: 14rem !important;
+        height: 14rem !important;
+    }
+    .blob-shape img {
+        width: 12rem !important;
+        height: 12rem !important;
+    }
+}
+
+/* Touch Device Improvements */
+@media (hover: none) {
+    .project-card:hover {
+        transform: none;
+    }
+    .skill-card:hover {
+        transform: none;
+    }
+}
+
+
+body.dark-mode {
+    background-color: #1D1D1F;
+    color: #F5F5F7;
+}
+
+body.dark-mode .bg-white {
+    background-color: #2D2D2F !important;
+}
+
+body.dark-mode .bg-apple-gray {
+    background-color: #3D3D3F !important;
+}
+
+body.dark-mode .text-apple-dark {
+    color: #F5F5F7 !important;
+}
+
+body.dark-mode .text-apple-dark\/70,
+body.dark-mode .text-apple-dark\/60,
+body.dark-mode .text-apple-dark\/80 {
+    color: rgba(245, 245, 247, 0.7) !important;
+}
+
+body.dark-mode .glass-nav {
+    background: rgba(29, 29, 31, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .border-gray-200\/50 {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .shadow-sm {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #F5F5F7;
+    color: #1D1D1F;
+}
+
+/* Dark Mode - Mobile Menu */
+body.dark-mode .mobile-menu {
+    background: #1D1D1F !important;
+}
+
+body.dark-mode .mobile-nav-link:hover {
+    background-color: #3D3D3F !important;
+}
+
+body.dark-mode .mobile-menu .border-gray-200 {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark Mode - Cards */
+body.dark-mode .project-card {
+    background-color: #3D3D3F !important;
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .skill-card:hover {
+    box-shadow: 0 20px 40px rgba(128, 0, 0, 0.3);
+}
+
+/* Dark Mode - Experience */
+body.dark-mode .border-maroon\/30 {
+    border-color: rgba(128, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .border-gray-100 {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark Mode - Blob Glow */
+body.dark-mode .blob-shape {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.25) 0%, rgba(255, 142, 142, 0.15) 50%, rgba(255, 82, 82, 0.1) 100%) !important;
+    box-shadow: 0 0 60px rgba(255, 107, 107, 0.2), 0 0 120px rgba(255, 107, 107, 0.1);
+}
+
+/* Dark Mode - Buttons */
+body.dark-mode .border-apple-dark\/20 {
+    border-color: rgba(245, 245, 247, 0.3) !important;
+}
+
+body.dark-mode .hover\:border-maroon:hover {
+    border-color: #a00000 !important;
+}
+
+/* Dark Mode - Badges */
+body.dark-mode .bg-white.px-3 {
+    background-color: #4D4D4F !important;
+}
+
+body.dark-mode a.bg-apple-gray:hover {
+    background-color: #800000 !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.4);
+}
+
+body.dark-mode a.bg-apple-gray:hover i {
+    color: white !important;
+}
+
+/* Dark Mode - Experience Links */
+body.dark-mode a.border-l-2:hover p.font-semibold,
+body.dark-mode a.flex.items-start:hover p.font-medium,
+body.dark-mode a.flex.items-start:hover p.text-apple-dark\/80 {
+    color: #FF6B6B !important;
+}
+
+/* Dark Mode - Cards Hover */
+body.dark-mode .bg-white.rounded-2xl:hover,
+body.dark-mode .bg-white.rounded-3xl:hover {
+    box-shadow: 0 10px 30px rgba(128, 0, 0, 0.2) !important;
+    border-color: rgba(128, 0, 0, 0.3) !important;
+}
+
+/* Dark Mode - Gradient Text */
+body.dark-mode .gradient-text {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 50%, #FF5252 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Dark Mode - Maroon Colors */
+body.dark-mode .text-maroon {
+    color: #FF6B6B !important;
+}
+
+body.dark-mode .bg-maroon {
+    background-color: #800000 !important;
+}
+
+body.dark-mode .bg-maroon\/10 {
+    background-color: rgba(255, 107, 107, 0.15) !important;
+}
+
+/* Dark Mode - Scroll & Buttons */
+body.dark-mode .scroll-progress {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E8E) !important;
+}
+
+body.dark-mode .back-to-top {
+    background: #FF6B6B;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+body.dark-mode .back-to-top:hover {
+    background: #FF8E8E;
+}
