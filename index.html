@@ -11,16 +11,17 @@
     <link rel="icon" type="image/png" href="assets/RWP.png">
     <link rel="apple-touch-icon" href="assets/RWP.png">
     
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts - Inter (Preload) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- FontAwesome CDN (Async) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     
     <!-- Tailwind Config -->
     <script>
@@ -67,14 +68,12 @@
             overflow-x: hidden;
         }
         
-        /* Glassmorphism Navbar */
         .glass-nav {
             background: rgba(255, 255, 255, 0.72);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
         
-        /* Blob Shape for Profile */
         .blob-shape {
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             animation: blob-morph 8s ease-in-out infinite;
@@ -89,7 +88,6 @@
             }
         }
         
-        /* Project Card Hover */
         .project-card {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
@@ -99,7 +97,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
-        /* Timeline */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -174,17 +171,182 @@
                 transform: none;
             }
         }
+        
+        /* Typing Cursor Animation */
+        .typing-cursor {
+            color: #800000;
+            font-weight: 300;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #800000, #a00000);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: #600000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(128, 0, 0, 0.4);
+        }
+        
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: #1D1D1F;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1D1D1F;
+            color: #F5F5F7;
+        }
+        
+        body.dark-mode .bg-white {
+            background-color: #2D2D2F !important;
+        }
+        
+        body.dark-mode .bg-apple-gray {
+            background-color: #3D3D3F !important;
+        }
+        
+        body.dark-mode .text-apple-dark {
+            color: #F5F5F7 !important;
+        }
+        
+        body.dark-mode .text-apple-dark\/70,
+        body.dark-mode .text-apple-dark\/60,
+        body.dark-mode .text-apple-dark\/80 {
+            color: rgba(245, 245, 247, 0.7) !important;
+        }
+        
+        body.dark-mode .glass-nav {
+            background: rgba(29, 29, 31, 0.8) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        body.dark-mode .border-gray-200\/50 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        body.dark-mode .shadow-sm {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        body.dark-mode .dark-mode-toggle {
+            background: #F5F5F7;
+            color: #1D1D1F;
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #800000 0%, #a00000 50%, #600000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Enhanced Skill Card Hover */
+        .skill-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid transparent;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(128, 0, 0, 0.15);
+            border-color: rgba(128, 0, 0, 0.1);
+        }
+        
+        .skill-card:hover .w-16 {
+            transform: scale(1.1) rotate(5deg);
+            transition: transform 0.3s ease;
+        }
+        
+        body.dark-mode .skill-card:hover {
+            box-shadow: 0 20px 40px rgba(128, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body class="font-inter">
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+        <i class="fas fa-moon" id="darkModeIcon"></i>
+    </button>
     
     <!-- Navbar -->
     <nav class="glass-nav fixed top-0 left-0 right-0 z-50 border-b border-gray-200/50">
         <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="#" class="text-2xl font-bold text-apple-dark">
-                    Rizal WP<span class="text-maroon">.</span>
+                <a href="#" class="flex items-center gap-2">
+                    <img src="assets/RWP.png" alt="RWP Logo" class="w-8 h-8">
+                    <span class="text-2xl font-bold text-apple-dark">Rizal WP<span class="text-maroon">.</span></span>
                 </a>
                 
                 <!-- Desktop Menu -->
@@ -234,14 +396,14 @@
                 <!-- Text Content -->
                 <div class="order-2 md:order-1">
                     <p class="text-maroon font-semibold text-lg mb-4 tracking-wide">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-apple-dark leading-tight mb-6">
-                        Rizal Wahyu<br>Pratama
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                        <span class="gradient-text">Rizal Wahyu</span><br><span class="gradient-text">Pratama</span>
                     </h1>
                     <h2 class="text-2xl md:text-3xl font-semibold text-apple-dark/70 mb-6">
-                        Data Analyst <span class="text-maroon">&</span> Scientist
+                        Data <span id="typing-text" class="text-maroon"></span><span class="typing-cursor">|</span>
                     </h2>
                     <p class="text-lg text-apple-dark/60 leading-relaxed mb-8 max-w-lg">
-                        Mengubah data mentah menjadi <span class="text-maroon font-semibold">clarity</span> dan insight yang mendorong keputusan bisnis strategis. Dari analisis ke aksi.
+                        Mengubah data mentah menjadi <span class="text-maroon font-semibold">insight</span> yang membawa bisnis Anda ke level berikutnya.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="#projects" class="bg-maroon text-white px-8 py-4 rounded-full font-semibold hover:bg-maroon/90 transition-all hover:shadow-xl inline-flex items-center gap-2">
@@ -257,7 +419,7 @@
                 <!-- Profile Image -->
                 <div class="order-1 md:order-2 flex justify-center">
                     <div class="blob-shape w-72 h-72 md:w-96 md:h-96 bg-gradient-to-br from-maroon/20 to-maroon/5 flex items-center justify-center overflow-hidden">
-                        <img src="assets/FotoFormal.png" alt="Rizal Wahyu Pratama" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full">
+                        <img src="assets/FotoFormal.png" alt="Rizal Wahyu Pratama" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full" loading="eager">
                     </div>
                 </div>
             </div>
@@ -275,29 +437,33 @@
             </div>
             
             <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
-                <div>
-                    <div class="w-full h-80 bg-gradient-to-br from-apple-gray to-white rounded-3xl flex items-center justify-center">
-                        <i class="fas fa-chart-line text-8xl text-maroon/20"></i>
+                <div class="flex justify-center md:justify-start">
+                    <div class="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="assets/AboutMe.jpeg" alt="Rizal Wahyu Pratama" class="w-full h-full object-cover" loading="lazy">
                     </div>
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold text-apple-dark mb-6">
-                        Bridging the gap between <span class="text-maroon">data</span> and <span class="text-maroon">business decisions</span>
+                        Transforming <span class="text-maroon">raw data</span> into <span class="text-maroon">actionable insights</span>
                     </h3>
                     <p class="text-apple-dark/70 leading-relaxed mb-6">
-                        Saya adalah seorang Data Analyst & Scientist dengan passion dalam mengekstraksi nilai dari data kompleks. Dengan kombinasi keterampilan teknis yang kuat dalam Python, SQL, dan machine learning, serta pemahaman mendalam tentang kebutuhan bisnis, saya membantu organisasi membuat keputusan berbasis data.
+                        Saya Rizal Wahyu Pratama, mahasiswa S1 Sains Data di Telkom University dengan GPA 3.92 dan penerima Beasiswa APERTI BUMN 2023. Memiliki passion dalam mengolah data kompleks menjadi insight yang bernilai menggunakan Python, SQL, dan Machine Learning.
                     </p>
                     <p class="text-apple-dark/70 leading-relaxed mb-8">
-                        Pengalaman saya mencakup berbagai industri, dari fintech hingga e-commerce, memungkinkan saya untuk memberikan perspektif yang luas dalam setiap proyek. Saya percaya bahwa data yang baik, dianalisis dengan benar, adalah kunci untuk pertumbuhan bisnis yang berkelanjutan.
+                        Pengalaman magang di BPS dan Telkom University mengasah kemampuan saya dalam visualisasi data dan analisis statistik. Saya juga aktif berkontribusi dalam penelitian ilmiah dengan publikasi jurnal sebagai penulis pertama. Sebagai Mahasiswa Berprestasi Prodi tahun 2025, saya berusaha memberikan dampak positif melalui data.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <div class="bg-apple-gray px-6 py-3 rounded-full">
-                            <span class="font-semibold text-maroon">3+</span>
-                            <span class="text-apple-dark/70 ml-1">Years Experience</span>
+                            <span class="font-semibold text-maroon counter" data-target="3.92" data-decimal="true">0</span>
+                            <span class="text-apple-dark/70 ml-1">GPA</span>
                         </div>
                         <div class="bg-apple-gray px-6 py-3 rounded-full">
-                            <span class="font-semibold text-maroon">20+</span>
-                            <span class="text-apple-dark/70 ml-1">Projects Done</span>
+                            <span class="font-semibold text-maroon counter" data-target="3">0</span>
+                            <span class="text-apple-dark/70 ml-1">Published Journals</span>
+                        </div>
+                        <div class="bg-apple-gray px-6 py-3 rounded-full">
+                            <span class="font-semibold text-maroon counter" data-target="2">0</span>
+                            <span class="text-apple-dark/70 ml-1">Internships</span>
                         </div>
                     </div>
                 </div>
@@ -327,8 +493,6 @@
                         <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Python</span>
                         <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">SQL</span>
                         <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">R</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Pandas</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">NumPy</span>
                     </div>
                 </div>
                 
@@ -340,11 +504,10 @@
                     <h3 class="text-xl font-bold text-apple-dark mb-4">Visualization</h3>
                     <p class="text-apple-dark/60 mb-6">Tools for creating impactful visual stories</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Tableau</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Power BI</span>
+                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Looker Studio</span>
                         <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Matplotlib</span>
                         <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Seaborn</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Plotly</span>
+                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Excel</span>
                     </div>
                 </div>
                 
@@ -356,11 +519,10 @@
                     <h3 class="text-xl font-bold text-apple-dark mb-4">Data Science</h3>
                     <p class="text-apple-dark/60 mb-6">Advanced analytics and machine learning</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Scikit-learn</span>
+                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Scikit-Learn</span>
                         <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">TensorFlow</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">XGBoost</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">NLP</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Deep Learning</span>
+                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Keras</span>
+                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">PyTorch</span>
                     </div>
                 </div>
             </div>
@@ -378,65 +540,65 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8 fade-in">
-                <!-- Project 1: Churn Prediction -->
+                <!-- Project 1: Flood Evacuation Route -->
                 <div class="project-card bg-apple-gray rounded-3xl overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-maroon/20 to-maroon/5 flex items-center justify-center">
-                        <i class="fas fa-users text-5xl text-maroon/40"></i>
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/WebCilacap.png" alt="AI Rute Evakuasi Banjir Cilacap" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Machine Learning</span>
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Python</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Random Forest</span>
                         </div>
-                        <h3 class="text-xl font-bold text-apple-dark mb-3">Customer Churn Prediction</h3>
+                        <h3 class="text-xl font-bold text-apple-dark mb-3">AI Rute Evakuasi Banjir</h3>
                         <p class="text-apple-dark/60 text-sm mb-4">
-                            Model prediksi churn dengan akurasi 92% menggunakan Random Forest dan XGBoost untuk mengidentifikasi pelanggan berisiko tinggi.
+                            Sistem rekomendasi jalur evakuasi ke shelter saat banjir di Kabupaten Cilacap. Menggunakan algoritma Random Forest untuk pemilihan rute optimal.
                         </p>
-                        <a href="#" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
-                            <span>View Case Study</span>
+                        <a href="https://rizaledc.github.io/Rekomendasi-Rute-Evakuasi-Banjir-Cilacap/output/maps/peta_terintegrasi_satelit.html" target="_blank" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
+                            <span>View Project</span>
                             <i class="fas fa-arrow-right text-sm"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Project 2: Sales Dashboard -->
+                <!-- Project 2: Urban Farming Jakarta -->
                 <div class="project-card bg-apple-gray rounded-3xl overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-maroon/20 to-maroon/5 flex items-center justify-center">
-                        <i class="fas fa-chart-bar text-5xl text-maroon/40"></i>
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/UrbanFarm.png" alt="Urban Farming Jakarta Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Visualization</span>
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Tableau</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Data Visualization</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Streamlit</span>
                         </div>
-                        <h3 class="text-xl font-bold text-apple-dark mb-3">Sales Performance Dashboard</h3>
+                        <h3 class="text-xl font-bold text-apple-dark mb-3">Urban Farming Jakarta</h3>
                         <p class="text-apple-dark/60 text-sm mb-4">
-                            Dashboard interaktif yang memberikan insight real-time tentang performa penjualan, tren, dan KPI untuk tim eksekutif.
+                            Dashboard interaktif yang menyajikan data dan insight tentang pertanian perkotaan di Jakarta, lengkap dengan berita terkini seputar urban farming.
                         </p>
-                        <a href="#" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
-                            <span>View Case Study</span>
+                        <a href="https://huggingface.co/spaces/rizalwp/UrbanFarming-Jakarta" target="_blank" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
+                            <span>View Project</span>
                             <i class="fas fa-arrow-right text-sm"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Project 3: Hotel Price -->
+                <!-- Project 3: Bali Tourism Visualization -->
                 <div class="project-card bg-apple-gray rounded-3xl overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-maroon/20 to-maroon/5 flex items-center justify-center">
-                        <i class="fas fa-hotel text-5xl text-maroon/40"></i>
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/Wilcoxon.jpg" alt="Visualisasi Wisatawan Bali" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Data Analysis</span>
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">SQL</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Data Storytelling</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Visualization</span>
                         </div>
-                        <h3 class="text-xl font-bold text-apple-dark mb-3">Hotel Price Optimization</h3>
+                        <h3 class="text-xl font-bold text-apple-dark mb-3">Wisatawan Bali: Pra vs Pasca COVID</h3>
                         <p class="text-apple-dark/60 text-sm mb-4">
-                            Analisis pricing dinamis untuk industri perhotelan, meningkatkan revenue 15% melalui strategi harga berbasis data.
+                            Analisis perbandingan tren kunjungan wisatawan Bali sebelum dan setelah pandemi COVID-19, dipublikasikan dalam jurnal ilmiah.
                         </p>
-                        <a href="#" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
-                            <span>View Case Study</span>
-                            <i class="fas fa-arrow-right text-sm"></i>
+                        <a href="https://www.linkedin.com/posts/rizalwp_bali-pandemicimpact-datastorytelling-activity-7350329137296789505-Pu9D" target="_blank" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
+                            <span>View on LinkedIn</span>
+                            <i class="fab fa-linkedin text-sm"></i>
                         </a>
                     </div>
                 </div>
@@ -454,50 +616,144 @@
                 <p class="text-apple-dark/60 text-center mb-16 text-lg">My professional journey</p>
             </div>
             
-            <div class="max-w-3xl mx-auto fade-in">
-                <div class="relative border-l-2 border-maroon/30 pl-8 space-y-12">
-                    <!-- Experience 1 -->
-                    <div class="timeline-item relative">
-                        <div class="bg-white rounded-2xl p-6 shadow-sm">
-                            <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
-                                <h3 class="text-xl font-bold text-apple-dark">Senior Data Analyst</h3>
-                                <span class="bg-maroon/10 text-maroon px-4 py-1 rounded-full text-sm font-medium">2023 - Present</span>
-                            </div>
-                            <p class="text-maroon font-semibold mb-3">PT. Tech Indonesia</p>
-                            <p class="text-apple-dark/60">
-                                Memimpin tim data dalam mengembangkan solusi analytics enterprise. Bertanggung jawab atas strategi data dan implementasi machine learning untuk optimisasi bisnis.
-                            </p>
+            <!-- Main Highlight: Education -->
+            <div class="fade-in mb-12">
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
+                    <div class="flex flex-col md:flex-row md:items-center gap-6">
+                        <div class="w-20 h-20 bg-maroon/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-3xl text-maroon"></i>
                         </div>
-                    </div>
-                    
-                    <!-- Experience 2 -->
-                    <div class="timeline-item relative">
-                        <div class="bg-white rounded-2xl p-6 shadow-sm">
-                            <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
-                                <h3 class="text-xl font-bold text-apple-dark">Data Analyst</h3>
-                                <span class="bg-maroon/10 text-maroon px-4 py-1 rounded-full text-sm font-medium">2021 - 2023</span>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <h3 class="text-2xl md:text-3xl font-bold text-apple-dark">Telkom University</h3>
+                                <span class="bg-maroon text-white px-4 py-1 rounded-full text-sm font-semibold">GPA 3.92</span>
                             </div>
-                            <p class="text-maroon font-semibold mb-3">Startup Fintech ABC</p>
-                            <p class="text-apple-dark/60">
-                                Mengembangkan dashboard real-time untuk monitoring KPI bisnis. Melakukan analisis cohort dan customer segmentation untuk tim marketing.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience 3 -->
-                    <div class="timeline-item relative">
-                        <div class="bg-white rounded-2xl p-6 shadow-sm">
-                            <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
-                                <h3 class="text-xl font-bold text-apple-dark">Junior Data Analyst</h3>
-                                <span class="bg-maroon/10 text-maroon px-4 py-1 rounded-full text-sm font-medium">2020 - 2021</span>
+                            <p class="text-maroon font-semibold text-lg mb-2">S1 Sains Data • Semester 6</p>
+                            <p class="text-apple-dark/60 mb-4">Sedang menempuh pendidikan Sarjana dengan fokus pada Data Science, Machine Learning, dan Statistical Analysis.</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="bg-maroon px-4 py-2 rounded-full text-sm font-medium text-white inline-flex items-center gap-2">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Beasiswa APERTI BUMN 2023
+                                </span>
+                                <a href="https://drive.google.com/file/d/1VmupdN1py4E51WcHmH3j47A3mgwIq1ij/view" target="_blank" class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark inline-flex items-center gap-2 hover:bg-maroon hover:text-white transition-all">
+                                    <i class="fas fa-certificate"></i>
+                                    Data Analysis Bootcamp
+                                </a>
+                                <a href="https://drive.google.com/file/d/1Ql6b3TqwrpHMvU67kIyyx5qp6Su5B9HS/view" target="_blank" class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark inline-flex items-center gap-2 hover:bg-maroon hover:text-white transition-all">
+                                    <i class="fas fa-trophy"></i>
+                                    Mahasiswa Berprestasi
+                                </a>
+                                <a href="https://drive.google.com/file/d/1fyvbN5QWQyodeizYeKIlA5_TO-MfmOEj/view" target="_blank" class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark inline-flex items-center gap-2 hover:bg-maroon hover:text-white transition-all">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                    Asisten Praktikum
+                                </a>
                             </div>
-                            <p class="text-maroon font-semibold mb-3">E-commerce XYZ</p>
-                            <p class="text-apple-dark/60">
-                                Memulai karir sebagai data analyst dengan fokus pada analisis penjualan, inventory management, dan reporting otomatis menggunakan SQL dan Python.
-                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Grid Cards -->
+            <div class="grid md:grid-cols-2 gap-6 fade-in">
+                
+                <!-- Internship Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-briefcase text-xl text-maroon"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-apple-dark">Internship</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <a href="https://drive.google.com/file/d/1UfONHZs7feTUWglvqaNUEIjcKREJAgVR/view" target="_blank" class="border-l-2 border-maroon/30 pl-4 block hover:border-maroon transition-all">
+                            <p class="font-semibold text-apple-dark hover:text-maroon">BPS Kabupaten Banyumas</p>
+                            <p class="text-sm text-maroon mb-1">Divisi Sosial</p>
+                            <p class="text-apple-dark/60 text-sm">Mengolah data program Desa Cantik untuk dashboard dan publikasi.</p>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1dC9WvZyBTQExgdL3n5-Lny9IVeD9KHr9/view" target="_blank" class="border-l-2 border-maroon/30 pl-4 block hover:border-maroon transition-all">
+                            <p class="font-semibold text-apple-dark hover:text-maroon">Humas Telkom University Purwokerto</p>
+                            <p class="text-sm text-maroon mb-1">Student Staff</p>
+                            <p class="text-apple-dark/60 text-sm">Memantau traffic media sosial TikTok dan memproduksi konten.</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Projects Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-code text-xl text-maroon"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-apple-dark">Projects</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="https://rizaledc.github.io/Rekomendasi-Rute-Evakuasi-Banjir-Cilacap/output/maps/peta_terintegrasi_satelit.html" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
+                            <i class="fas fa-route text-maroon mt-1"></i>
+                            <p class="text-apple-dark/80 text-sm hover:text-maroon">AI Jalur Evakuasi Bencana Banjir Kabupaten Cilacap</p>
+                        </a>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-chart-line text-maroon mt-1"></i>
+                            <p class="text-apple-dark/80 text-sm">Forecasting Inflasi Indonesia dengan LSTM</p>
+                        </div>
+                        <a href="https://huggingface.co/spaces/rizalwp/UrbanFarming-Jakarta" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
+                            <i class="fas fa-leaf text-maroon mt-1"></i>
+                            <p class="text-apple-dark/80 text-sm hover:text-maroon">Website Interaktif Urban Farming Jakarta</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Organization Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-users text-xl text-maroon"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-apple-dark">Organization</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-user-tie text-maroon mt-1"></i>
+                            <div>
+                                <p class="text-apple-dark/80 text-sm font-medium">HR Staffing</p>
+                                <p class="text-apple-dark/60 text-xs">Himpunan Mahasiswa Sains Data</p>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1NYCrCTBFlb6SY8Gdp5QfIurHBcDM_2bj/view" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
+                            <i class="fas fa-bullhorn text-maroon mt-1"></i>
+                            <div>
+                                <p class="text-apple-dark/80 text-sm font-medium hover:text-maroon">Student Roadshow</p>
+                                <p class="text-apple-dark/60 text-xs">Penerimaan Mahasiswa Baru Tel-U</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Research & Achievements Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-award text-xl text-maroon"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-apple-dark">Research & Achievements</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="https://conferences.ittelkom-pwt.ac.id/index.php/centive/article/view/452" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
+                            <i class="fas fa-file-alt text-maroon mt-1"></i>
+                            <div>
+                                <p class="text-apple-dark/80 text-sm font-medium hover:text-maroon">Publikasi Jurnal</p>
+                                <p class="text-apple-dark/60 text-xs">Tingkat Kunjungan Wisatawan Bali (Uji Wilcoxon) - Penulis Pertama</p>
+                            </div>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1fyvbN5QWQyodeizYeKIlA5_TO-MfmOEj/view" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
+                            <i class="fas fa-chalkboard-teacher text-maroon mt-1"></i>
+                            <div>
+                                <p class="text-apple-dark/80 text-sm font-medium hover:text-maroon">Asisten Praktikum</p>
+                                <p class="text-apple-dark/60 text-xs">Mata Kuliah Struktur Data</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -515,11 +771,11 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-6 mb-16 fade-in">
-                <a href="mailto:rizal.pratama@email.com" class="bg-white text-maroon px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all hover:shadow-xl inline-flex items-center gap-3">
+                <a href="mailto:rizalwahp1804@gmail.com" class="bg-white/10 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-maroon transition-all inline-flex items-center gap-3">
                     <i class="fas fa-envelope"></i>
-                    <span>rizal.pratama@email.com</span>
+                    <span>rizalwahp1804@gmail.com</span>
                 </a>
-                <a href="https://wa.me/6281234567890" target="_blank" class="bg-white/10 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-maroon transition-all inline-flex items-center gap-3">
+                <a href="https://wa.me/6282145782083" target="_blank" class="bg-white/10 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-maroon transition-all inline-flex items-center gap-3">
                     <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
@@ -527,20 +783,20 @@
             
             <!-- Social Links -->
             <div class="flex justify-center gap-6 mb-12 fade-in">
-                <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
+                <a href="https://www.linkedin.com/in/rizalwp" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
                     <i class="fab fa-linkedin-in text-xl"></i>
                 </a>
-                <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
+                <a href="https://github.com/rizaledc" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
                     <i class="fab fa-github text-xl"></i>
                 </a>
-                <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
+                <a href="https://instagram.com/rizal.edc" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
                     <i class="fab fa-instagram text-xl"></i>
                 </a>
             </div>
             
             <!-- Copyright -->
             <div class="text-center text-white/60 fade-in">
-                <p>&copy; 2024 Rizal Wahyu Pratama. All rights reserved.</p>
+                <p>&copy; 2026 Rizal Wahyu Pratama. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -623,6 +879,139 @@
                 navbar.classList.remove('shadow-sm');
             }
         });
+        
+        // Typewriter Effect
+        const typingElement = document.getElementById('typing-text');
+        const words = ['Analyst', 'Scientist'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150;
+        
+        function typeWriter() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 80;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 150;
+            }
+            
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                typingSpeed = 2000; // Pause before deleting
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingSpeed = 500; // Pause before typing next word
+            }
+            
+            setTimeout(typeWriter, typingSpeed);
+        }
+        
+        // Start typewriter effect
+        typeWriter();
+        
+        // Scroll Progress Bar
+        const scrollProgress = document.getElementById('scrollProgress');
+        
+        function updateScrollProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        }
+        
+        window.addEventListener('scroll', updateScrollProgress);
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        function toggleBackToTop() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+        
+        window.addEventListener('scroll', toggleBackToTop);
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeIcon.classList.remove('fa-moon');
+            darkModeIcon.classList.add('fa-sun');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeIcon.classList.remove('fa-moon');
+                darkModeIcon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeIcon.classList.remove('fa-sun');
+                darkModeIcon.classList.add('fa-moon');
+            }
+        });
+        
+        // Animated Counter
+        const counters = document.querySelectorAll('.counter');
+        let countersAnimated = false;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const isDecimal = counter.hasAttribute('data-decimal');
+                const duration = 2000; // 2 seconds
+                const start = 0;
+                const increment = target / (duration / 16);
+                let current = start;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = isDecimal ? target.toFixed(2) : target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Trigger counter animation when About section is visible
+        const aboutSection = document.getElementById('about');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    animateCounters();
+                    countersAnimated = true;
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        counterObserver.observe(aboutSection);
     </script>
 </body>
 </html>
