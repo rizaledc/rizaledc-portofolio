@@ -631,6 +631,14 @@ html.intro .intro-screen::after {
 .intro-dots i:nth-child(2) { animation-delay: .9s; }
 .intro-dots i:nth-child(3) { animation-delay: 1.1s; }
 .intro-screen.folio .intro-dots { opacity: 0; transition: opacity .2s; }
+.intro-break { display: none; }
+@media (max-width: 600px) {
+    /* phones: PORT on one line, FOLIO lands on the next, much bigger */
+    .intro-word { flex-wrap: wrap; width: 100%; justify-content: flex-start; font-size: 38vw; line-height: .88; padding: 0 0 .06em 2vw; }
+    .intro-break { display: block; flex-basis: 100%; height: 0; }
+    .intro-dots > span { bottom: .1em; gap: .07em; }
+    .intro-dots i { width: .08em; height: .08em; }
+}
 .intro-count { font-family: var(--display); font-size: 28px; letter-spacing: .02em; color: var(--ink); min-width: 3ch; }
 .intro-bar { flex: 1; height: 1px; background: var(--line); position: relative; overflow: hidden; }
 .intro-bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); animation: introBar 2.8s cubic-bezier(.6, 0, .3, 1) .1s forwards; }
