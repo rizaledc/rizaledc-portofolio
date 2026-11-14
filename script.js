@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Intro: "PORT..." holds, then "FOLIO" completes the word and the screen lifts
+    const root = document.documentElement;
+    const intro = document.getElementById('introScreen');
+    if (intro && root.classList.contains('intro')) {
+        const count = document.getElementById('introCount');
+        const t0 = performance.now();
+        const TOTAL = 2900;
+        const tickCount = (now) => {
+            const p = Math.min((now - t0) / TOTAL, 1);
+            count.textContent = String(Math.round(p * 100)).padStart(3, '0');
+            if (p < 1 && root.classList.contains('intro')) requestAnimationFrame(tickCount);
+        };
+        requestAnimationFrame(tickCount);
+
+        const timers = [];
+        const finish = () => {
+            timers.forEach(clearTimeout);
+            intro.classList.add('folio');
+            root.classList.add('intro-out');
+            try { sessionStorage.setItem('introSeen', '1'); } catch (e) { /* ignore */ }
+            setTimeout(() => {
+                root.classList.remove('intro', 'intro-out');
+                intro.remove();
+            }, 2000);
+        };
+        timers.push(setTimeout(() => intro.classList.add('folio'), 2100));
+        timers.push(setTimeout(finish, 3100));
+        // let impatient visitors skip
+        intro.addEventListener('click', finish);
+        window.addEventListener('keydown', function skip() { finish(); window.removeEventListener('keydown', skip); }, { once: true });
+    } else if (intro) {
+        intro.remove();
+    }
+
     const nav = document.getElementById('nav');
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');

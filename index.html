@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FAFAF7">
+    <script>
+        /* Intro plays once per visit; failsafe removes it if anything goes wrong */
+        try {
+            if (!sessionStorage.getItem('introSeen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.documentElement.classList.add('intro');
+                setTimeout(function () { document.documentElement.classList.remove('intro'); }, 7000);
+            }
+        } catch (e) {}
+    </script>
 
     <title>Rizal Wahyu Pratama | AI Engineer &amp; Data Scientist</title>
     <meta name="description" content="Rizal Wahyu Pratama: aspiring AI Engineer building AI + satellite-data products with Python, FastAPI and agentic AI. Winner of MAJU:ON Hackathon 2026-27 (AI·AX Track) and Best of the Best at SOBAT Competition 2026 by United Tractors. Data Science, Telkom University, GPA 3.93.">
@@ -72,6 +81,12 @@
 </head>
 <body>
 
+    <div class="intro-screen" id="introScreen" aria-hidden="true">
+        <div class="intro-row intro-top"><span>Rizal Wahyu Pratama</span><span>Portfolio &middot; 2026</span></div>
+        <div class="intro-word"><span class="il il-port" style="--d:0.15s">P</span><span class="il il-port" style="--d:0.24s">O</span><span class="il il-port" style="--d:0.33s">R</span><span class="il il-port" style="--d:0.42s">T</span><span class="intro-dots"><span><i></i><i></i><i></i></span></span><span class="il il-folio" style="--d:0.00s">F</span><span class="il il-folio" style="--d:0.07s">O</span><span class="il il-folio" style="--d:0.14s">L</span><span class="il il-folio" style="--d:0.21s">I</span><span class="il il-folio" style="--d:0.28s">O</span></div>
+        <div class="intro-row intro-bottom"><span class="intro-count" id="introCount">000</span><span class="intro-bar"><i></i></span><span>AI Engineer &middot; Data Scientist</span></div>
+    </div>
+
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- ============ NAV ============ -->
@@ -117,7 +132,7 @@
                 <p class="script">Hello, I'm</p>
                 <h1 class="hero-name">Rizal Wahyu<br>Pratama</h1>
                 <p class="hero-role">AI Engineer &amp;<br>Geospatial Data Scientist</p>
-                <p class="hero-bio">I turn data, especially satellite and spatial data, into working AI products. Python, FastAPI, React and agentic AI, from model to production.</p>
+                <p class="hero-bio">Satellite data in, working AI products out.</p>
                 <div class="hero-actions">
                     <a href="#work" class="btn btn-dark">View my work <i class="fas fa-arrow-right"></i></a>
                     <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -155,7 +170,7 @@
                 <h2 class="display win-title">Winner<span class="accent">.</span><br>MAJU:ON<br>Hackathon</h2>
                 <p class="win-track">AI·AX Track &middot; 2026–27 edition</p>
                 <p class="win-org">Organised by <strong>UD IMPACT</strong> (South Korea) &middot; supported by SK Innovation</p>
-                <p class="win-text">First place in the AI·AX track of the 2026–27 MAJU:ON Hackathon, <em>Move Forward for a Sustainable Indonesia</em>, part of the Young Entrepreneur Project.</p>
+                <p class="win-text"><em>Move Forward for a Sustainable Indonesia.</em></p>
                 <div class="win-prize">
                     <svg class="prize-mark" viewBox="12 28 72 60" aria-hidden="true"><polygon points="14,70 46,38 52,44"/><polygon points="18,86 74,30 82,38"/><polygon points="40,86 72,54 78,60"/></svg>
                     <span class="prize-icon"><i class="fas fa-trophy"></i></span>
@@ -178,7 +193,7 @@
                 <h2 class="display win-title">Best of<br>the Best<span class="accent">.</span><br>SOBAT</h2>
                 <p class="win-track">SOBAT Competition 2026 &middot; Polytechnic / University category</p>
                 <p class="win-org">Organised by <strong>PT United Tractors Tbk</strong> &middot; member of Astra</p>
-                <p class="win-text">Top award (Anugerah Adibrata) in the polytechnic and university category of the SOBAT Competition 2026 with Orbitani, the AI and geospatial precision-agriculture platform. One of three national awards Orbitani won this year.</p>
+                <p class="win-text">Won with Orbitani, one of its three national awards this year.</p>
                 <a href="https://www.orbitani.com/" target="_blank" rel="noopener" class="link-arrow">See Orbitani <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
@@ -192,134 +207,77 @@
                 <span class="rule"></span>
                 <a href="https://github.com/rizaledc" target="_blank" rel="noopener" class="link-arrow small">GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
-            <!-- Featured: Orbitani -->
-            <article class="feature reveal">
-                <div class="feature-cover">
-                    <img src="assets/orbitani.webp" alt="Orbitani platform homepage: satellite view of Indonesia with dashboards" loading="lazy" width="960" height="609">
-                    <span class="cover-tag">orbitani.com</span>
-                </div>
-                <div class="feature-body">
-                    <p class="num">01</p>
-                    <h3 class="display feature-title">Orbitani</h3>
-                    <p class="feature-sub">AI &amp; geospatial precision-agriculture platform</p>
-                    <p>A full-stack platform I built with FastAPI and React. Its agentic AI feature reads satellite data from Google Earth Engine and analyses land conditions anywhere in Indonesia, so farmers and partners can make decisions from real field signals.</p>
-                    <ul class="pill-list">
-                        <li>FastAPI</li><li>React</li><li>Agentic AI</li><li>Google Earth Engine</li>
-                    </ul>
-                    <p class="feature-award"><i class="fas fa-trophy"></i> 3 national awards in 2026, including Best of the Best at the SOBAT Competition by PT United Tractors Tbk</p>
-                    <a href="https://www.orbitani.com/" target="_blank" rel="noopener" class="btn btn-dark">Visit Orbitani <i class="fas fa-arrow-right ne"></i></a>
-                </div>
-            </article>
-
-            <div class="work-grid">
-                <!-- 02 Dashboard -->
-                <article class="work-card reveal">
-                    <a href="https://statistik-wisata-banyumas.vercel.app" target="_blank" rel="noopener" class="work-link">
-                        <div class="work-cover">
-                            <img src="assets/bps-dashboard.webp" alt="Banyumas tourism statistics dashboard homepage" loading="lazy" width="720" height="449">
-                        </div>
-                        <div class="work-meta">
-                            <span class="num">02</span>
-                            <div>
-                                <h3>Banyumas Tourism Statistics</h3>
-                                <p>Dashboard for BPS Banyumas</p>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <p class="work-desc">Turns BPS Banyumas's official tourism release into clear insight: tourist flows, hotel occupancy, origin–destination matrix and annual trends.</p>
-                    </a>
-                </article>
-
-                <!-- 03 BLUD -->
-                <article class="work-card reveal">
-                    <a href="https://bludpariwisata.com" target="_blank" rel="noopener" class="work-link">
-                        <div class="work-cover">
-                            <img src="assets/blud-pariwisata.webp" alt="BLUD Pariwisata Kabupaten Banyumas website homepage" loading="lazy" width="720" height="449">
-                        </div>
-                        <div class="work-meta">
-                            <span class="num">03</span>
-                            <div>
-                                <h3>BLUD Pariwisata Banyumas</h3>
-                                <p>Public-sector web platform &middot; in progress</p>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <p class="work-desc">Web platform for the Banyumas regional tourism agency, built with PHP and React + Vite.</p>
-                    </a>
-                </article>
-
-                <!-- 04 IEEE -->
-                <article class="work-card reveal">
-                    <a href="https://ieeexplore.ieee.org/document/11446355" target="_blank" rel="noopener" class="work-link">
-                        <div class="work-cover">
-                            <img src="assets/ieee-paper.webp" alt="IEEE Xplore page of the carbon emission classification paper" loading="lazy" width="720" height="450">
-                        </div>
-                        <div class="work-meta">
-                            <span class="num">04</span>
-                            <div>
-                                <h3>Carbon Emission Classification</h3>
-                                <p>IEEE Asia-Pacific conference 2025 &middot; co-author</p>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <p class="work-desc">Classifies urban carbon emission potential from Sentinel-5P NO₂, WorldPop, VIIRS night lights and GHSL data via Google Earth Engine. Random Forest reached 80.23% accuracy.</p>
-                    </a>
-                </article>
-
-                <!-- 05 Flood -->
-                <article class="work-card reveal">
-                    <a href="https://rizaledc.github.io/Rekomendasi-Rute-Evakuasi-Banjir-Cilacap/output/maps/peta_terintegrasi_satelit.html" target="_blank" rel="noopener" class="work-link">
-                        <div class="work-cover">
-                            <img src="assets/flood-cilacap.webp" alt="Flood evacuation route map for Cilacap" loading="lazy">
-                        </div>
-                        <div class="work-meta">
-                            <span class="num">05</span>
-                            <div>
-                                <h3>Flood Evacuation Routing</h3>
-                                <p>Geospatial ML &middot; Cilacap</p>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <p class="work-desc">Recommends evacuation routes to shelters during floods in Cilacap Regency, using Random Forest on satellite-based layers.</p>
-                    </a>
-                </article>
-
-                <!-- 06 Urban Farming -->
-                <article class="work-card reveal">
-                    <a href="https://huggingface.co/spaces/rizalwp/UrbanFarming-Jakarta" target="_blank" rel="noopener" class="work-link">
-                        <div class="work-cover">
-                            <img src="assets/urban-farming.webp" alt="Urban Farming Jakarta dashboard" loading="lazy">
-                        </div>
-                        <div class="work-meta">
-                            <span class="num">06</span>
-                            <div>
-                                <h3>Urban Farming Jakarta</h3>
-                                <p>Interactive dashboard &middot; Streamlit</p>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <p class="work-desc">Data and insight on urban agriculture in Jakarta, with a feed of the latest urban-farming news.</p>
-                    </a>
-                </article>
-
-                <!-- 07 Bali -->
-                <article class="work-card reveal">
-                    <a href="https://conferences.ittelkom-pwt.ac.id/index.php/centive/article/view/452" target="_blank" rel="noopener" class="work-link">
-                        <div class="work-cover">
-                            <img src="assets/bali-wilcoxon.webp" alt="Bali tourist arrivals before and after COVID-19" loading="lazy">
-                        </div>
-                        <div class="work-meta">
-                            <span class="num">07</span>
-                            <div>
-                                <h3>Bali Tourism, Pre vs Post COVID</h3>
-                                <p>Journal paper &middot; first author</p>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <p class="work-desc">Wilcoxon signed-rank analysis of Bali tourist arrivals before and after the pandemic.</p>
-                    </a>
-                </article>
+            <div class="mag">
+                <a href="https://www.orbitani.com/" target="_blank" rel="noopener" class="tile t-hero reveal">
+                    <img src="assets/orbitani.webp" alt="Orbitani platform: satellite view of Indonesia with dashboards" loading="lazy" width="960" height="609">
+                    <span class="tile-num">01</span>
+                    <div class="tile-cap">
+                        <p class="tile-tag">AI &middot; Geospatial &middot; 3 national awards</p>
+                        <h3>Orbitani</h3>
+                        <p class="tile-line">Agentic AI that reads satellite data to analyse farmland across Indonesia.</p>
+                    </div>
+                    <span class="tile-go"><i class="fas fa-arrow-right ne"></i></span>
+                </a>
+                <a href="https://statistik-wisata-banyumas.vercel.app" target="_blank" rel="noopener" class="tile t-side reveal">
+                    <img src="assets/bps-dashboard.webp" alt="Banyumas tourism statistics dashboard" loading="lazy" width="720" height="449">
+                    <span class="tile-num">02</span>
+                    <div class="tile-cap">
+                        <p class="tile-tag">Dashboard &middot; BPS</p>
+                        <h3>Banyumas Tourism Stats</h3>
+                        <p class="tile-line">Official tourism data, made readable.</p>
+                    </div>
+                    <span class="tile-go"><i class="fas fa-arrow-right ne"></i></span>
+                </a>
+                <a href="https://bludpariwisata.com" target="_blank" rel="noopener" class="tile t-side reveal">
+                    <img src="assets/blud-pariwisata.webp" alt="BLUD Pariwisata Banyumas website" loading="lazy" width="720" height="449">
+                    <span class="tile-num">03</span>
+                    <div class="tile-cap">
+                        <p class="tile-tag">Web platform &middot; In progress</p>
+                        <h3>BLUD Pariwisata</h3>
+                        <p class="tile-line">The regency tourism agency, online.</p>
+                    </div>
+                    <span class="tile-go"><i class="fas fa-arrow-right ne"></i></span>
+                </a>
+                <a href="https://ieeexplore.ieee.org/document/11446355" target="_blank" rel="noopener" class="tile t-wide reveal">
+                    <img src="assets/ieee-paper.webp" alt="IEEE Xplore page of the carbon emission paper" loading="lazy" width="720" height="450">
+                    <span class="tile-num">04</span>
+                    <div class="tile-cap">
+                        <p class="tile-tag">IEEE &middot; 2025</p>
+                        <h3>Carbon Emission Classification</h3>
+                        <p class="tile-line">Satellite data + Random Forest, 80.23% accuracy.</p>
+                    </div>
+                    <span class="tile-go"><i class="fas fa-arrow-right ne"></i></span>
+                </a>
+                <a href="https://rizaledc.github.io/Rekomendasi-Rute-Evakuasi-Banjir-Cilacap/output/maps/peta_terintegrasi_satelit.html" target="_blank" rel="noopener" class="tile t-narrow reveal">
+                    <img src="assets/flood-cilacap.webp" alt="Flood evacuation route map for Cilacap" loading="lazy" width="720" height="637">
+                    <span class="tile-num">05</span>
+                    <div class="tile-cap">
+                        <p class="tile-tag">Geospatial ML</p>
+                        <h3>Flood Evacuation Routing</h3>
+                        <p class="tile-line">Safer routes to shelters in Cilacap.</p>
+                    </div>
+                    <span class="tile-go"><i class="fas fa-arrow-right ne"></i></span>
+                </a>
+                <a href="https://huggingface.co/spaces/rizalwp/UrbanFarming-Jakarta" target="_blank" rel="noopener" class="tile t-narrow reveal">
+                    <img src="assets/urban-farming.webp" alt="Urban Farming Jakarta dashboard" loading="lazy" width="720" height="526">
+                    <span class="tile-num">06</span>
+                    <div class="tile-cap">
+                        <p class="tile-tag">Streamlit</p>
+                        <h3>Urban Farming Jakarta</h3>
+                        <p class="tile-line">Jakarta&rsquo;s urban farms, mapped.</p>
+                    </div>
+                    <span class="tile-go"><i class="fas fa-arrow-right ne"></i></span>
+                </a>
+                <a href="https://conferences.ittelkom-pwt.ac.id/index.php/centive/article/view/452" target="_blank" rel="noopener" class="tile t-wide reveal">
+                    <img src="assets/bali-wilcoxon.webp" alt="Bali tourist arrivals before and after COVID-19" loading="lazy" width="720" height="720">
+                    <span class="tile-num">07</span>
+                    <div class="tile-cap">
+                        <p class="tile-tag">Journal &middot; First author</p>
+                        <h3>Bali Tourism, Pre vs Post COVID</h3>
+                        <p class="tile-line">What the pandemic did to Bali, in numbers.</p>
+                    </div>
+                    <span class="tile-go"><i class="fas fa-arrow-right ne"></i></span>
+                </a>
             </div>
         </div>
     </section>
@@ -378,68 +336,36 @@
         </div>
     </section>
 
-    <!-- ============ ABOUT / EDUCATION / SKILLS ============ -->
+    <!-- ============ ABOUT ============ -->
     <section class="section" id="about">
-        <div class="container about-grid">
-            <figure class="about-photo reveal">
-                <img src="assets/about-rizal.webp" alt="Rizal Wahyu Pratama speaking at a Telkom Indonesia event" loading="lazy" width="560" height="560">
-                <figcaption><span class="spark">✦</span> Data Science &middot; Telkom University</figcaption>
-            </figure>
-            <div class="about-intro reveal">
-                <p class="kicker"><span class="spark">✦</span> About me</p>
-                <h2 class="display about-title">From model<br>to <span class="accent">production</span>.</h2>
-                <p>I'm a Data Science student at Telkom University (GPA 3.93, graduating February 2027) working toward an AI Engineer role. I like the part where a model stops being a notebook and becomes something people use.</p>
-                <p>Most of my work sits where machine learning meets satellite and spatial data: classifying land and emissions from imagery, building APIs around those models, and giving them an agentic layer that can reason over the results.</p>
-                <p>I'm open to full-time <strong>AI Engineer</strong> or <strong>Data Engineer</strong> roles anywhere in Indonesia or abroad, whether remote, hybrid or on-site.</p>
-            </div>
-
-            <div class="about-side">
-                <div class="card edu reveal">
-                    <h3 class="card-label">Education</h3>
-                    <div class="edu-row">
-                        <div>
-                            <p class="edu-title">B.Sc. Data Science</p>
-                            <p class="edu-sub">Telkom University, Purwokerto</p>
-                        </div>
-                        <span class="edu-date">2023 – Feb 2027</span>
-                    </div>
-                    <div class="edu-chips">
-                        <span>GPA 3.93 / 4.00</span>
-                        <span>APERTI BUMN scholar</span>
-                    </div>
-                    <div class="edu-row edu-row-sm">
-                        <div>
-                            <p class="edu-title">Digicamp 1: From Pixels to Smart Systems</p>
-                            <p class="edu-sub">Digistar Club by Telkom Indonesia &middot; CNNs to deployed apps</p>
-                        </div>
-                    </div>
-                    <a href="https://drive.google.com/file/d/1VmupdN1py4E51WcHmH3j47A3mgwIq1ij/view" target="_blank" rel="noopener" class="edu-row edu-row-sm edu-link">
-                        <div>
-                            <p class="edu-title">Data Analysis Bootcamp</p>
-                            <p class="edu-sub">Certificate</p>
-                        </div>
-                        <i class="fas fa-arrow-right ne"></i>
-                    </a>
+        <div class="container">
+            <div class="spread">
+                <figure class="spread-main reveal">
+                    <img src="assets/about-rizal.webp" alt="Rizal Wahyu Pratama speaking at a Telkom Indonesia event" loading="lazy" width="560" height="560">
+                </figure>
+                <div class="spread-text reveal">
+                    <p class="kicker"><span class="spark">✦</span> About me</p>
+                    <h2 class="display about-title">From model<br>to <span class="accent">production</span>.</h2>
+                    <p class="lede">Data Science at Telkom University. I turn satellite and spatial data into AI products that people actually use.</p>
+                    <dl class="facts">
+                        <div><dt>Study</dt><dd>B.Sc. Data Science &middot; GPA 3.93</dd></div>
+                        <div><dt>Graduating</dt><dd>February 2027</dd></div>
+                        <div><dt>Focus</dt><dd>AI engineering &middot; geospatial ML</dd></div>
+                        <div><dt>Work</dt><dd>Indonesia &amp; abroad &middot; any setup</dd></div>
+                    </dl>
                 </div>
-
-                <div class="card reveal">
-                    <h3 class="card-label">Tools &amp; technologies</h3>
-                    <ul class="tool-grid">
-                        <li><span class="mono">Py</span>Python</li>
-                        <li><span class="mono">Fa</span>FastAPI</li>
-                        <li><span class="mono">Ag</span>AI Agents</li>
-                        <li><span class="mono">Ee</span>Earth Engine</li>
-                        <li><span class="mono">Re</span>React</li>
-                        <li><span class="mono">Sq</span>SQL</li>
-                        <li><span class="mono">Sk</span>scikit-learn</li>
-                        <li><span class="mono">Lg</span>LightGBM</li>
-                        <li><span class="mono">Hf</span>IndoBERT</li>
-                        <li><span class="mono">Sh</span>SHAP</li>
-                        <li><span class="mono">Tf</span>TensorFlow</li>
-                        <li><span class="mono">St</span>Streamlit</li>
-                    </ul>
-                </div>
+                <figure class="spread-a reveal">
+                    <img src="assets/majuon-winner.webp" alt="Winning MAJU:ON Hackathon" loading="lazy" width="640" height="1138">
+                    <figcaption>MAJU:ON &rsquo;26</figcaption>
+                </figure>
+                <figure class="spread-b reveal">
+                    <img src="assets/sobat-ut-winner.webp" alt="Best of the Best at SOBAT Competition" loading="lazy" width="520" height="924">
+                    <figcaption>SOBAT &rsquo;26</figcaption>
+                </figure>
             </div>
+            <ul class="tool-cloud reveal" aria-label="Tools and technologies">
+                <li>Python</li><li>FastAPI</li><li>AI Agents</li><li>Google Earth Engine</li><li>React</li><li>SQL</li><li>scikit-learn</li><li>LightGBM</li><li>IndoBERT</li><li>SHAP</li><li>TensorFlow</li><li>Streamlit</li>
+            </ul>
         </div>
     </section>
 
@@ -450,12 +376,37 @@
                 <h2 class="section-title">How I work</h2>
                 <span class="rule"></span>
             </div>
-            <ol class="process">
-                <li class="reveal"><span class="num">01</span><i class="fas fa-magnifying-glass"></i><h3>Frame</h3><p>Pin down the decision the model has to support, and what data can answer it.</p></li>
-                <li class="reveal"><span class="num">02</span><i class="fas fa-satellite"></i><h3>Collect</h3><p>Build pipelines from satellite, spatial and tabular sources with Earth Engine and SQL.</p></li>
-                <li class="reveal"><span class="num">03</span><i class="fas fa-diagram-project"></i><h3>Model</h3><p>Train, tune and explain with LightGBM, IndoBERT and SHAP.</p></li>
-                <li class="reveal"><span class="num">04</span><i class="fas fa-code"></i><h3>Ship</h3><p>Wrap it in FastAPI and React, with agentic workflows on top.</p></li>
-                <li class="reveal"><span class="num">05</span><i class="fas fa-rocket"></i><h3>Iterate</h3><p>Measure with real users and keep improving what's in production.</p></li>
+            <ol class="steps">
+                <li class="reveal">
+                    <span class="step-num">01</span>
+                    <span class="step-icon"><i class="fas fa-magnifying-glass"></i></span>
+                    <h3>Frame</h3>
+                    <p>Find the real question.</p>
+                </li>
+                <li class="reveal">
+                    <span class="step-num">02</span>
+                    <span class="step-icon"><i class="fas fa-satellite"></i></span>
+                    <h3>Collect</h3>
+                    <p>Satellite to pipeline.</p>
+                </li>
+                <li class="reveal">
+                    <span class="step-num">03</span>
+                    <span class="step-icon"><i class="fas fa-diagram-project"></i></span>
+                    <h3>Model</h3>
+                    <p>Train, tune, explain.</p>
+                </li>
+                <li class="reveal">
+                    <span class="step-num">04</span>
+                    <span class="step-icon"><i class="fas fa-code"></i></span>
+                    <h3>Ship</h3>
+                    <p>APIs, apps, agents.</p>
+                </li>
+                <li class="reveal">
+                    <span class="step-num">05</span>
+                    <span class="step-icon"><i class="fas fa-rocket"></i></span>
+                    <h3>Iterate</h3>
+                    <p>Measure. Improve.</p>
+                </li>
             </ol>
         </div>
     </section>
@@ -467,45 +418,45 @@
                 <div class="section-head section-head-stack">
                     <h2 class="section-title">Experience</h2>
                 </div>
-                <p class="exp-intro">Building products, working with public-sector data, and helping run campus programmes.</p>
+                <p class="exp-intro">Products, public data, people.</p>
             </div>
             <ol class="timeline" id="timeline">
                 <span class="tl-track" aria-hidden="true"><span class="tl-fill"></span><span class="tl-head"></span></span>
                 <li class="reveal">
                     <p class="tl-org">Orbitani</p>
                     <h3>Builder &middot; AI &amp; Geospatial Platform</h3>
-                    <p>Designed and shipped the platform end to end: FastAPI backend, React frontend, Earth Engine data layer and an agentic AI for land analysis.</p>
+                    <p>End-to-end: FastAPI, React, Earth Engine, agentic AI.</p>
                 </li>
                 <li class="reveal">
                     <p class="tl-org">BLUD Pariwisata Kabupaten Banyumas</p>
                     <h3>Web Platform Developer</h3>
-                    <p>Building the agency's web platform with PHP and React + Vite.</p>
+                    <p>PHP and React + Vite.</p>
                 </li>
                 <li class="reveal">
                     <a href="https://drive.google.com/file/d/1UfONHZs7feTUWglvqaNUEIjcKREJAgVR/view" target="_blank" rel="noopener">
                         <p class="tl-org">BPS Kabupaten Banyumas <i class="fas fa-arrow-right ne"></i></p>
                         <h3>Data Intern &middot; Social Statistics</h3>
-                        <p>Processed data from the Desa Cantik programme for dashboards and official publications.</p>
+                        <p>Desa Cantik data for dashboards and publications.</p>
                     </a>
                 </li>
                 <li class="reveal">
                     <a href="https://drive.google.com/file/d/1fyvbN5QWQyodeizYeKIlA5_TO-MfmOEj/view" target="_blank" rel="noopener">
                         <p class="tl-org">Telkom University <i class="fas fa-arrow-right ne"></i></p>
                         <h3>Teaching Assistant &middot; Data Structures</h3>
-                        <p>Ran lab sessions and helped students debug their implementations.</p>
+                        <p>Lab sessions for Data Structures.</p>
                     </a>
                 </li>
                 <li class="reveal">
                     <a href="https://drive.google.com/file/d/1dC9WvZyBTQExgdL3n5-Lny9IVeD9KHr9/view" target="_blank" rel="noopener">
                         <p class="tl-org">Public Relations, Telkom University Purwokerto <i class="fas fa-arrow-right ne"></i></p>
                         <h3>Student Staff</h3>
-                        <p>Tracked TikTok traffic and produced content for the campus channels.</p>
+                        <p>Campus content and TikTok analytics.</p>
                     </a>
                 </li>
                 <li class="reveal">
                     <p class="tl-org">Data Science Student Association &middot; Telkom University</p>
                     <h3>HR Staff &amp; Student Roadshow</h3>
-                    <p>Supported member staffing and represented the university in new-student roadshows.</p>
+                    <p>Member staffing and new-student roadshows.</p>
                 </li>
             </ol>
         </div>
@@ -517,7 +468,7 @@
             <div class="cta reveal">
                 <div class="cta-left">
                     <h2 class="display cta-title">Let's build<br>something<br><span class="accent">intelligent</span>.</h2>
-                    <p>Available for full-time AI Engineer or Data Engineer roles across Indonesia and internationally (remote, hybrid or on-site), as well as collaborations and geospatial AI projects.</p>
+                    <p>AI &amp; Data Engineer roles, in Indonesia or abroad.</p>
                     <a href="mailto:hello.rizalwahyu@gmail.com" class="btn btn-dark">Email me <i class="fas fa-arrow-right ne"></i></a>
                 </div>
                 <ul class="contact-list">
