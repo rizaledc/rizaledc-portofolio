@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Rizal Wahyu Pratama logo, option C: modular R">
+  <!-- An abstract R built from three different shapes = many talents in one identity; the spark = curiosity -->
+  <rect x="16" y="14" width="22" height="72" rx="3" fill="#141414"/>
+  <path d="M42 14 H52 A20 20 0 0 1 52 54 H42 Z" fill="#9B111E"/>
+  <polygon points="42,58 58,58 84,86 62,86" fill="#141414"/>
+  <path d="M82 8 L84.6 15.4 L92 18 L84.6 20.6 L82 28 L79.4 20.6 L72 18 L79.4 15.4 Z" fill="#9B111E"/>
+</svg>
