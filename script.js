@@ -74,5 +74,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Experience timeline: progress line + travelling dot follow the scroll
+    const timeline = document.getElementById('timeline');
+    if (timeline) {
+        const items = [...timeline.querySelectorAll('li')];
+        let ticking = false;
+        const updateTimeline = () => {
+            ticking = false;
+            const rect = timeline.getBoundingClientRect();
+            const anchor = window.innerHeight * 0.55;
+            const p = Math.min(Math.max((anchor - rect.top) / rect.height, 0), 1);
+            timeline.style.setProperty('--p', p.toFixed(4));
+            items.forEach((li) => {
+                li.classList.toggle('passed', li.getBoundingClientRect().top + 12 <= anchor);
+            });
+        };
+        const requestTimeline = () => { if (!ticking) { ticking = true; requestAnimationFrame(updateTimeline); } };
+        window.addEventListener('scroll', requestTimeline, { passive: true });
+        window.addEventListener('resize', requestTimeline);
+        updateTimeline();
+    }
+
+    // Contact note: appears once per visit, 30s after opening, if the visitor has scrolled
+    const toast = document.getElementById('contactToast');
+    if (toast) {
+        const storage = {
+            get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+            set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* ignore */ } }
+        };
+        const contact = document.getElementById('contact');
+        let hasScrolled = false;
+        let dueTime = false;
+        let shown = storage.get('contactToastSeen') === '1';
+
+        const contactInView = () => {
+            const r = contact.getBoundingClientRect();
+            return r.top < window.innerHeight && r.bottom > 0;
+        };
+        const show = () => {
+            if (shown || !hasScrolled || !dueTime || contactInView()) return;
+            shown = true;
+            storage.set('contactToastSeen', '1');
+            toast.hidden = false;
+            requestAnimationFrame(() => requestAnimationFrame(() => toast.classList.add('show')));
+        };
+        const hide = () => {
+            toast.classList.remove('show');
+            setTimeout(() => { toast.hidden = true; }, 500);
+        };
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) hasScrolled = true;
+            show();
+        }, { passive: true });
+        setTimeout(() => { dueTime = true; show(); }, 30000);
+        document.getElementById('toastClose').addEventListener('click', hide);
+        document.getElementById('toastLater').addEventListener('click', hide);
+        toast.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setTimeout(hide, 300)));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !toast.hidden) hide(); });
+    }
+
     document.getElementById('year').textContent = new Date().getFullYear();
 });
