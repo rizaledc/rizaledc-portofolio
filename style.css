@@ -336,6 +336,12 @@ strong { font-weight: 600; }
 .prize-label { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
 .prize-value { font-family: var(--display); font-size: 36px; line-height: 1.1; }
 .win-body .link-arrow { display: flex; width: fit-content; }
+.win-org { font-size: 14px; color: var(--ink-2); margin: -8px 0 14px; }
+.win-org strong { color: var(--ink); }
+.win-grid-alt { margin-top: 112px; grid-template-columns: 1.1fr .9fr; }
+.win-grid-alt .win-photo { order: 2; }
+.win-grid-alt .win-photo::before { inset: 18px 18px -18px -18px; }
+.win-grid-alt .win-photo img { object-position: 50% 58%; }
 
 /* ---------- Featured project ---------- */
 .feature {
@@ -608,7 +614,9 @@ strong { font-weight: 600; }
     .hero-left { grid-column: 1; grid-row: 2; padding: 36px 0 32px; }
     .hero-right { grid-template-columns: 1fr; gap: 24px; }
 
-    .win-grid { grid-template-columns: 1fr; gap: 48px; }
+    .win-grid, .win-grid-alt { grid-template-columns: 1fr; gap: 48px; }
+    .win-grid-alt { margin-top: 80px; }
+    .win-grid-alt .win-photo { order: 0; }
     .win-photo { max-width: 520px; }
 
     .feature { grid-template-columns: 1fr; }
@@ -645,7 +653,7 @@ strong { font-weight: 600; }
     .tool-grid { grid-template-columns: repeat(2, 1fr); }
     .edu-row { flex-direction: column; gap: 4px; }
     .marquee-track span { font-size: 20px; }
-    .win-photo::before { inset: 12px -10px -12px 12px; }
+    .win-photo::before, .win-grid-alt .win-photo::before { inset: 12px -10px -12px 12px; }
     .cta-quote { padding: 36px 24px; }
 }
 
