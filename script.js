@@ -1,202 +1,78 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
-    AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 50,
-        delay: 0
-    });
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('nav');
     const menuBtn = document.getElementById('menuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
+    const progress = document.getElementById('scrollProgress');
 
-    function openMenu() {
-        mobileMenu.classList.add('active');
-        overlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+    // Mobile menu
+    const setMenu = (open) => {
+        nav.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+    // Nav border + scroll progress
+    const onScroll = () => {
+        const y = window.scrollY;
+        nav.classList.toggle('scrolled', y > 24);
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Active nav link
+    const links = [...document.querySelectorAll('.nav-links a')];
+    const sections = links.map((l) => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    if ('IntersectionObserver' in window) {
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                links.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        sections.forEach((s) => spy.observe(s));
     }
 
-    function closeMenu() {
-        mobileMenu.classList.remove('active');
-        overlay.classList.add('hidden');
-        document.body.style.overflow = '';
-    }
-
-    menuBtn.addEventListener('click', openMenu);
-    closeMenuBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-
-    // Close mobile menu when clicking a link
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-
-    const navbar = document.querySelector('nav');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('shadow-sm');
-        } else {
-            navbar.classList.remove('shadow-sm');
-        }
-    });
-
-
-    const typingElement = document.getElementById('typing-text');
-    const words = ['Analyst', 'Scientist'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 150;
-
-    function typeWriter() {
-        const currentWord = words[wordIndex];
-        
-        if (isDeleting) {
-            typingElement.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-            typingSpeed = 80;
-        } else {
-            typingElement.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-            typingSpeed = 150;
-        }
-        
-        if (!isDeleting && charIndex === currentWord.length) {
-            isDeleting = true;
-            typingSpeed = 2000;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            typingSpeed = 500;
-        }
-        
-        setTimeout(typeWriter, typingSpeed);
-    }
-
-    typeWriter();
-
-
-    const scrollProgress = document.getElementById('scrollProgress');
-
-    function updateScrollProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        scrollProgress.style.width = scrollPercent + '%';
-    }
-
-    window.addEventListener('scroll', updateScrollProgress);
-
-
-    const backToTop = document.getElementById('backToTop');
-
-    function toggleBackToTop() {
-        if (window.scrollY > 500) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    }
-
-    window.addEventListener('scroll', toggleBackToTop);
-
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const darkModeIcon = document.getElementById('darkModeIcon');
-
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-        darkModeIcon.classList.remove('fa-moon');
-        darkModeIcon.classList.add('fa-sun');
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-            darkModeIcon.classList.remove('fa-moon');
-            darkModeIcon.classList.add('fa-sun');
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-            darkModeIcon.classList.remove('fa-sun');
-            darkModeIcon.classList.add('fa-moon');
-        }
-        
-        AOS.refresh();
-    });
-
-
-    const counters = document.querySelectorAll('.counter');
-    let countersAnimated = false;
-
-    function animateCounters() {
-        counters.forEach(counter => {
-            const target = parseFloat(counter.dataset.target);
-            const isDecimal = counter.dataset.decimal === 'true';
-            const duration = 2000;
-            const start = 0;
-            const increment = target / (duration / 16);
-            let current = start;
-            
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = isDecimal ? target.toFixed(2) : target;
-                }
-            };
-            
-            updateCounter();
-        });
-    }
-
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersAnimated) {
-                    animateCounters();
-                    countersAnimated = true;
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    io.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.3 });
-        
-        counterObserver.observe(aboutSection);
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach((el, i) => {
+            el.style.transitionDelay = (i % 4) * 70 + 'ms';
+            io.observe(el);
+        });
+    } else {
+        reveals.forEach((el) => el.classList.add('in'));
     }
 
+    // Counters in hero
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+        document.querySelectorAll('.counter').forEach((el) => {
+            const target = parseFloat(el.dataset.target);
+            const decimals = parseInt(el.dataset.decimals || '0', 10);
+            const start = performance.now();
+            const dur = 1400;
+            const tick = (now) => {
+                const p = Math.min((now - start) / dur, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = (target * eased).toFixed(decimals);
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
 });
