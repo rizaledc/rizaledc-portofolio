@@ -1,617 +1,614 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#800000">
-    
-    <!-- SEO Meta Tags -->
-    <title>Rizal Wahyu Pratama | Data Analyst & Scientist</title>
-    <meta name="description" content="Portfolio Rizal Wahyu Pratama - Data Analyst & Scientist yang mengubah data menjadi insight bisnis yang berharga. Mahasiswa S1 Sains Data Telkom University dengan GPA 3.92.">
-    <meta name="keywords" content="Data Analyst, Data Scientist, Data Science, Machine Learning, Python, SQL, Telkom University, Portfolio, Rizal Wahyu Pratama">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FAFAF7">
+
+    <title>Rizal Wahyu Pratama | AI Engineer &amp; Data Scientist</title>
+    <meta name="description" content="Rizal Wahyu Pratama: aspiring AI Engineer building AI + satellite-data products with Python, FastAPI and agentic AI. Winner of MAJU:ON Hackathon 2026-27 (AI·AX Track). Data Science, Telkom University, GPA 3.93.">
+    <meta name="keywords" content="AI Engineer, Data Scientist, Machine Learning, Agentic AI, FastAPI, Python, Google Earth Engine, Geospatial AI, Orbitani, Telkom University, Rizal Wahyu Pratama">
     <meta name="author" content="Rizal Wahyu Pratama">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://rizalwp.vercel.app/">
-    
-    <!-- Open Graph / Facebook -->
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rizalwp.vercel.app/">
-    <meta property="og:title" content="Rizal Wahyu Pratama | Data Analyst & Scientist">
-    <meta property="og:description" content="Portfolio Rizal Wahyu Pratama - Data Analyst & Scientist yang mengubah data menjadi insight bisnis yang berharga.">
-    <meta property="og:image" content="https://rizalwp.vercel.app/assets/FotoFormal.png">
+    <meta property="og:title" content="Rizal Wahyu Pratama | AI Engineer &amp; Data Scientist">
+    <meta property="og:description" content="Building AI + satellite-data products with Python, FastAPI and agentic AI. Winner of MAJU:ON Hackathon 2026-27, AI·AX Track.">
+    <meta property="og:image" content="https://rizalwp.vercel.app/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Rizal Wahyu Pratama Portfolio">
-    <meta property="og:locale" content="id_ID">
-    
-    <!-- Twitter Card -->
+    <meta property="og:site_name" content="Rizal Wahyu Pratama">
+    <meta property="og:locale" content="en_US">
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://rizalwp.vercel.app/">
-    <meta name="twitter:title" content="Rizal Wahyu Pratama | Data Analyst & Scientist">
-    <meta name="twitter:description" content="Portfolio Rizal Wahyu Pratama - Data Analyst & Scientist yang mengubah data menjadi insight bisnis yang berharga.">
-    <meta name="twitter:image" content="https://rizalwp.vercel.app/assets/FotoFormal.png">
-    
-    <!-- Favicon -->
+    <meta name="twitter:title" content="Rizal Wahyu Pratama | AI Engineer &amp; Data Scientist">
+    <meta name="twitter:description" content="Building AI + satellite-data products with Python, FastAPI and agentic AI.">
+    <meta name="twitter:image" content="https://rizalwp.vercel.app/assets/og-image.jpg">
+
     <link rel="icon" type="image/png" href="assets/RWP.png">
     <link rel="apple-touch-icon" href="assets/RWP.png">
-    
-    <!-- Google Fonts - Inter (Preload) -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Allura&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" as="image" href="assets/rizal-cutout.webp">
     <link rel="stylesheet" href="style.css">
-    
-    <!-- AOS Animation Library CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome CDN (Async) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'maroon': '#800000',
-                        'apple-gray': '#F5F5F7',
-                        'apple-dark': '#1D1D1F',
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    screens: {
-                        'xs': '375px',
-                        'sm': '640px',
-                        'md': '768px',
-                        'lg': '1024px',
-                        'xl': '1280px',
-                        '2xl': '1536px',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Structured Data / JSON-LD -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Rizal Wahyu Pratama",
         "url": "https://rizalwp.vercel.app/",
-        "image": "https://rizalwp.vercel.app/assets/FotoFormal.png",
-        "jobTitle": "Data Analyst & Scientist",
-        "worksFor": {
-            "@type": "EducationalOrganization",
-            "name": "Telkom University"
-        },
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Telkom University"
-        },
+        "image": "https://rizalwp.vercel.app/assets/rizal-cutout.webp",
+        "jobTitle": "AI Engineer",
+        "email": "mailto:hello.rizalwahyu@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Purwokerto", "addressRegion": "Central Java", "addressCountry": "ID" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Telkom University" },
+        "award": [
+            "Winner, AI·AX Track, MAJU:ON Hackathon 2026-27",
+            "1st Place, United Tractors Sobat Competition 2026",
+            "1st Place, T-Arts Competition 2024",
+            "APERTI BUMN Full Scholarship 2023"
+        ],
         "sameAs": [
             "https://www.linkedin.com/in/rizalwp",
             "https://github.com/rizaledc",
             "https://instagram.com/rizal.edc"
         ],
-        "knowsAbout": ["Data Science", "Machine Learning", "Python", "SQL", "Data Analysis", "Data Visualization"]
+        "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Agentic AI", "FastAPI", "Python", "Google Earth Engine", "Remote Sensing", "Natural Language Processing", "Data Science"]
     }
     </script>
 </head>
-<body class="font-inter">
-    
-    <!-- Scroll Progress Bar -->
+<body>
+
     <div class="scroll-progress" id="scrollProgress"></div>
-    
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- Dark Mode Toggle -->
-    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
-        <i class="fas fa-moon" id="darkModeIcon"></i>
-    </button>
-    
-    <!-- Navbar -->
-    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 border-b border-gray-200/50">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-2">
-                    <img src="assets/RWP.png" alt="RWP Logo" class="w-8 h-8">
-                    <span class="text-2xl font-bold text-apple-dark">Rizal WP<span class="text-maroon">.</span></span>
-                </a>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#about" class="nav-link text-apple-dark/80 hover:text-maroon transition-all font-medium py-2 px-1 relative">About</a>
-                    <a href="#skills" class="nav-link text-apple-dark/80 hover:text-maroon transition-all font-medium py-2 px-1 relative">Skills</a>
-                    <a href="#projects" class="nav-link text-apple-dark/80 hover:text-maroon transition-all font-medium py-2 px-1 relative">Projects</a>
-                    <a href="#experience" class="nav-link text-apple-dark/80 hover:text-maroon transition-all font-medium py-2 px-1 relative">Experience</a>
-                    <a href="#contact" class="nav-btn bg-maroon text-white px-6 py-2.5 rounded-full font-semibold hover:bg-maroon/90 transition-all hover:shadow-lg hover:scale-105">
-                        Hire Me
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="menuBtn" class="md:hidden text-apple-dark p-2">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl md:hidden z-50">
-            <div class="p-8 h-full flex flex-col">
-                <!-- Close Button -->
-                <button id="closeMenuBtn" class="absolute top-6 right-6 text-apple-dark p-2 hover:text-maroon transition-colors">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-                
-                <!-- Menu Header -->
-                <div class="mb-10 mt-2">
-                    <span class="text-xl font-bold text-apple-dark">Menu</span>
-                </div>
-                
-                <!-- Navigation Links -->
-                <nav class="flex flex-col gap-2 flex-1">
-                    <a href="#about" class="mobile-nav-link flex items-center gap-4 text-apple-dark text-lg font-medium hover:text-maroon hover:bg-apple-gray px-4 py-4 rounded-xl transition-all">
-                        <i class="fas fa-user text-maroon w-6"></i>
-                        About
-                    </a>
-                    <a href="#skills" class="mobile-nav-link flex items-center gap-4 text-apple-dark text-lg font-medium hover:text-maroon hover:bg-apple-gray px-4 py-4 rounded-xl transition-all">
-                        <i class="fas fa-code text-maroon w-6"></i>
-                        Skills
-                    </a>
-                    <a href="#projects" class="mobile-nav-link flex items-center gap-4 text-apple-dark text-lg font-medium hover:text-maroon hover:bg-apple-gray px-4 py-4 rounded-xl transition-all">
-                        <i class="fas fa-folder-open text-maroon w-6"></i>
-                        Projects
-                    </a>
-                    <a href="#experience" class="mobile-nav-link flex items-center gap-4 text-apple-dark text-lg font-medium hover:text-maroon hover:bg-apple-gray px-4 py-4 rounded-xl transition-all">
-                        <i class="fas fa-briefcase text-maroon w-6"></i>
-                        Experience
-                    </a>
-                </nav>
-                
-                <!-- Hire Me Button -->
-                <div class="mt-auto pt-6 border-t border-gray-200">
-                    <a href="#contact" class="mobile-nav-link bg-maroon text-white px-6 py-4 rounded-full font-semibold text-center hover:bg-maroon/90 transition-all flex items-center justify-center gap-3 shadow-lg">
-                        <i class="fas fa-envelope"></i>
-                        Hire Me
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Overlay -->
-    <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"></div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center pt-20">
-        <div class="max-w-6xl mx-auto px-6 py-20">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="order-2 md:order-1">
-                    <p class="text-maroon font-semibold text-lg mb-4 tracking-wide">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                        <span class="gradient-text">Rizal Wahyu</span><br><span class="gradient-text">Pratama</span>
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-apple-dark/70 mb-6">
-                        Data <span id="typing-text" class="text-maroon"></span><span class="typing-cursor">|</span>
-                    </h2>
-                    <p class="text-lg text-apple-dark/60 leading-relaxed mb-8 max-w-lg">
-                        Mengubah data mentah menjadi <span class="text-maroon font-semibold">insight</span> yang membawa bisnis Anda ke level berikutnya.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="bg-maroon text-white px-8 py-4 rounded-full font-semibold hover:bg-maroon/90 transition-all hover:shadow-xl inline-flex items-center gap-2">
-                            <span>View Projects</span>
+    <!-- ============ NAV ============ -->
+    <header class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#top" class="brand" aria-label="Rizal Wahyu Pratama, home">
+                <span class="brand-mark">RW</span>
+                <span class="brand-name">Rizal WP<span class="dot">.</span></span>
+            </a>
+            <nav class="nav-links" aria-label="Main">
+                <a href="#work">Work</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#contact" class="btn btn-pill nav-cta">Let's talk <i class="fas fa-arrow-right ne"></i></a>
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#work"><span>01</span>Work</a>
+            <a href="#achievements"><span>02</span>Achievements</a>
+            <a href="#about"><span>03</span>About</a>
+            <a href="#experience"><span>04</span>Experience</a>
+            <a href="#contact"><span>05</span>Contact</a>
+        </div>
+    </header>
+
+    <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="container hero-top">
+            <p class="eyebrow">AI Engineer<br>Data Scientist</p>
+            <p class="eyebrow eyebrow-right"><span class="live-dot"></span>Open to work <span class="spark">✦</span></p>
+        </div>
+
+        <div class="hero-word" aria-hidden="true">PORTFOLIO</div>
+
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <p class="script">Hello, I'm</p>
+                <h1 class="hero-name">Rizal<br>Wahyu<br>Pratama</h1>
+                <p class="hero-role">AI Engineer &amp;<br>Geospatial Data Scientist</p>
+                <p class="hero-bio">I turn data, especially satellite and spatial data, into working AI products. Python, FastAPI, React and agentic AI, from model to production.</p>
+                <div class="hero-actions">
+                    <a href="#work" class="btn btn-dark">View my work <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+                </div>
+                <p class="hero-loc"><i class="fas fa-location-dot"></i> Purwokerto, Indonesia &middot; open to Jakarta &amp; Bali</p>
+            </div>
+
+            <div class="hero-photo-wrap">
+                <img src="assets/rizal-cutout.webp" alt="Portrait of Rizal Wahyu Pratama" class="hero-photo" width="637" height="1400" fetchpriority="high">
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-callout">
+                    <span class="callout-icon">✦</span>
+                    <p>Turning satellite data into AI products people actually use.</p>
+                </div>
+                <ul class="hero-stats">
+                    <li><strong class="counter" data-target="3.93" data-decimals="2">3.93</strong><span>GPA<br>Telkom University</span></li>
+                    <li><strong><span class="counter" data-target="4">4</span></strong><span>Published<br>ML studies</span></li>
+                    <li><strong><span class="counter" data-target="4">4</span>+</strong><span>National<br>awards</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Agentic AI</span><span>✦</span><span>FastAPI</span><span>✦</span><span>Google Earth Engine</span><span>✦</span><span>Remote Sensing</span><span>✦</span><span>IndoBERT</span><span>✦</span><span>LightGBM</span><span>✦</span><span>React</span><span>✦</span><span>SHAP</span><span>✦</span>
+            <span>Agentic AI</span><span>✦</span><span>FastAPI</span><span>✦</span><span>Google Earth Engine</span><span>✦</span><span>Remote Sensing</span><span>✦</span><span>IndoBERT</span><span>✦</span><span>LightGBM</span><span>✦</span><span>React</span><span>✦</span><span>SHAP</span><span>✦</span>
+        </div>
+    </div>
+
+    <!-- ============ LATEST WIN ============ -->
+    <section class="section win" id="latest">
+        <div class="container win-grid">
+            <figure class="win-photo reveal">
+                <img src="assets/majuon-winner.webp" alt="Rizal holding the MAJU:ON Hackathon 2026-27 AI·AX Track winner board" loading="lazy" width="900" height="1600">
+                <figcaption>MAJU:ON Hackathon 2026–27, Indonesia</figcaption>
+            </figure>
+            <div class="win-body reveal">
+                <p class="kicker"><span class="spark">✦</span> Latest achievement</p>
+                <h2 class="display win-title">Winner<span class="accent">.</span><br>MAJU:ON<br>Hackathon</h2>
+                <p class="win-track">AI·AX Track &middot; 2026–27 edition</p>
+                <p class="win-text">First place in the AI·AX track of the 2026–27 MAJU:ON Hackathon, <em>Move Forward for a Sustainable Indonesia</em>, part of the Young Entrepreneur Project by SK Innovation and UD Impact.</p>
+                <div class="win-prize">
+                    <span class="prize-label">Prize</span>
+                    <span class="prize-value">IDR 50,000,000</span>
+                </div>
+                <a href="https://www.linkedin.com/in/rizalwp" target="_blank" rel="noopener" class="link-arrow">More on LinkedIn <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SELECTED WORK ============ -->
+    <section class="section" id="work">
+        <div class="container">
+            <div class="section-head reveal">
+                <h2 class="section-title">Selected work</h2>
+                <span class="rule"></span>
+                <a href="https://github.com/rizaledc" target="_blank" rel="noopener" class="link-arrow small">GitHub <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Featured: Orbitani -->
+            <article class="feature reveal">
+                <div class="feature-cover cover-orbit" aria-hidden="true">
+                    <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="currentColor" stroke-opacity=".12"/></pattern>
+                        </defs>
+                        <rect width="600" height="400" fill="url(#grid)"/>
+                        <g fill="none" stroke="currentColor">
+                            <ellipse cx="300" cy="210" rx="250" ry="90" stroke-opacity=".25" transform="rotate(-14 300 210)"/>
+                            <ellipse cx="300" cy="210" rx="170" ry="60" stroke-opacity=".35" transform="rotate(-14 300 210)"/>
+                        </g>
+                        <circle cx="300" cy="210" r="62" class="planet"/>
+                        <g class="fields">
+                            <rect x="262" y="180" width="30" height="22" rx="3"/><rect x="296" y="174" width="40" height="28" rx="3"/>
+                            <rect x="258" y="206" width="44" height="26" rx="3"/><rect x="306" y="206" width="30" height="30" rx="3"/>
+                        </g>
+                        <circle cx="530" cy="148" r="9" class="sat"/>
+                        <path d="M530 148 L330 200" stroke="currentColor" stroke-dasharray="4 6" stroke-opacity=".5"/>
+                    </svg>
+                    <span class="cover-tag">orbitani.com</span>
+                </div>
+                <div class="feature-body">
+                    <p class="num">01</p>
+                    <h3 class="display feature-title">Orbitani</h3>
+                    <p class="feature-sub">AI &amp; geospatial precision-agriculture platform</p>
+                    <p>A full-stack platform I built with FastAPI and React. Its agentic AI feature reads satellite data from Google Earth Engine and analyses land conditions anywhere in Indonesia, so farmers and partners can make decisions from real field signals.</p>
+                    <ul class="pill-list">
+                        <li>FastAPI</li><li>React</li><li>Agentic AI</li><li>Google Earth Engine</li>
+                    </ul>
+                    <p class="feature-award"><i class="fas fa-trophy"></i> 3 national awards in 2026, including 1st Place at United Tractors' Sobat Competition</p>
+                    <a href="https://www.orbitani.com/" target="_blank" rel="noopener" class="btn btn-dark">Visit Orbitani <i class="fas fa-arrow-right ne"></i></a>
+                </div>
+            </article>
+
+            <div class="work-grid">
+                <!-- 02 Dashboard -->
+                <article class="work-card reveal">
+                    <a href="https://statistik-wisata-banyumas.vercel.app" target="_blank" rel="noopener" class="work-link">
+                        <div class="work-cover cover-chart" aria-hidden="true">
+                            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+                                <rect x="20" y="20" width="360" height="210" rx="10" class="frame"/>
+                                <rect x="40" y="40" width="90" height="10" rx="5" class="ink"/>
+                                <rect x="40" y="58" width="60" height="6" rx="3" class="soft"/>
+                                <g class="bars">
+                                    <rect x="44" y="150" width="22" height="60" rx="3"/><rect x="76" y="128" width="22" height="82" rx="3"/>
+                                    <rect x="108" y="140" width="22" height="70" rx="3"/><rect x="140" y="104" width="22" height="106" rx="3" class="hi"/>
+                                    <rect x="172" y="118" width="22" height="92" rx="3"/><rect x="204" y="96" width="22" height="114" rx="3"/>
+                                </g>
+                                <circle cx="300" cy="130" r="48" class="ring"/>
+                                <path d="M300 82 A48 48 0 0 1 344 150" class="ring-hi"/>
+                                <text x="300" y="138" text-anchor="middle" class="ring-text">72%</text>
+                            </svg>
+                        </div>
+                        <div class="work-meta">
+                            <span class="num">02</span>
+                            <div>
+                                <h3>Banyumas Tourism Statistics</h3>
+                                <p>Dashboard for BPS Banyumas</p>
+                            </div>
                             <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="border-2 border-apple-dark/20 text-apple-dark px-8 py-4 rounded-full font-semibold hover:border-maroon hover:text-maroon transition-all inline-flex items-center gap-2">
-                            <span>Get in Touch</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Profile Image -->
-                <div class="order-1 md:order-2 flex justify-center">
-                    <div class="blob-shape w-72 h-72 md:w-96 md:h-96 bg-gradient-to-br from-maroon/20 to-maroon/5 flex items-center justify-center overflow-hidden">
-                        <img src="assets/FotoFormal.png" alt="Rizal Wahyu Pratama" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full" loading="eager">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        </div>
+                        <p class="work-desc">Turns BPS Banyumas's official tourism release into clear insight: tourist flows, hotel occupancy, origin–destination matrix and annual trends.</p>
+                    </a>
+                </article>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-apple-dark text-center mb-4">
-                    About Me<span class="text-maroon">.</span>
-                </h2>
-                <p class="text-apple-dark/60 text-center mb-16 text-lg">Get to know me better</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex justify-center md:justify-start">
-                    <div class="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-lg">
-                        <img src="assets/AboutMe.jpeg" alt="Rizal Wahyu Pratama" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-apple-dark mb-6">
-                        Transforming <span class="text-maroon">raw data</span> into <span class="text-maroon">actionable insights</span>
-                    </h3>
-                    <p class="text-apple-dark/70 leading-relaxed mb-6">
-                        Saya Rizal Wahyu Pratama, mahasiswa S1 Sains Data di Telkom University dengan GPA 3.92 dan penerima Beasiswa APERTI BUMN 2023. Memiliki passion dalam mengolah data kompleks menjadi insight yang bernilai menggunakan Python, SQL, dan Machine Learning.
-                    </p>
-                    <p class="text-apple-dark/70 leading-relaxed mb-8">
-                        Pengalaman magang di BPS dan Telkom University mengasah kemampuan saya dalam visualisasi data dan analisis statistik. Saya juga aktif berkontribusi dalam penelitian ilmiah dengan publikasi jurnal sebagai penulis pertama. Sebagai Mahasiswa Berprestasi Prodi tahun 2025, saya berusaha memberikan dampak positif melalui data.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="bg-apple-gray px-6 py-3 rounded-full">
-                            <span class="font-semibold text-maroon counter" data-target="3.92" data-decimal="true">0</span>
-                            <span class="text-apple-dark/70 ml-1">GPA</span>
+                <!-- 03 BLUD -->
+                <article class="work-card reveal">
+                    <a href="https://bludpariwisata.com" target="_blank" rel="noopener" class="work-link">
+                        <div class="work-cover cover-browser" aria-hidden="true">
+                            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+                                <rect x="20" y="20" width="360" height="210" rx="10" class="frame"/>
+                                <circle cx="38" cy="36" r="4" class="soft"/><circle cx="52" cy="36" r="4" class="soft"/><circle cx="66" cy="36" r="4" class="soft"/>
+                                <rect x="90" y="31" width="200" height="10" rx="5" class="soft"/>
+                                <rect x="20" y="52" width="360" height="1" class="soft"/>
+                                <rect x="40" y="76" width="150" height="16" rx="4" class="ink"/>
+                                <rect x="40" y="100" width="120" height="16" rx="4" class="ink"/>
+                                <rect x="40" y="128" width="130" height="6" rx="3" class="soft"/>
+                                <rect x="40" y="140" width="100" height="6" rx="3" class="soft"/>
+                                <rect x="40" y="162" width="70" height="20" rx="10" class="hi"/>
+                                <rect x="220" y="72" width="140" height="138" rx="8" class="img"/>
+                                <path d="M232 190 l30 -40 l22 26 l16 -18 l48 32 z" class="mount"/>
+                                <circle cx="330" cy="98" r="10" class="sun"/>
+                            </svg>
                         </div>
-                        <div class="bg-apple-gray px-6 py-3 rounded-full">
-                            <span class="font-semibold text-maroon counter" data-target="3">0</span>
-                            <span class="text-apple-dark/70 ml-1">Published Journals</span>
-                        </div>
-                        <div class="bg-apple-gray px-6 py-3 rounded-full">
-                            <span class="font-semibold text-maroon counter" data-target="2">0</span>
-                            <span class="text-apple-dark/70 ml-1">Internships</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-apple-gray">
-        <div class="max-w-6xl mx-auto px-6">
-            <div data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-apple-dark text-center mb-4">
-                    My Skills<span class="text-maroon">.</span>
-                </h2>
-                <p class="text-apple-dark/60 text-center mb-16 text-lg">Technologies I work with</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
-                <!-- Programming -->
-                <div class="skill-card bg-white rounded-3xl p-8 shadow-sm">
-                    <div class="w-16 h-16 bg-maroon/10 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-code text-2xl text-maroon"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-apple-dark mb-4">Programming</h3>
-                    <p class="text-apple-dark/60 mb-6">Core languages for data manipulation and analysis</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Python</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">SQL</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">R</span>
-                    </div>
-                </div>
-                
-                <!-- Visualization -->
-                <div class="skill-card bg-white rounded-3xl p-8 shadow-sm">
-                    <div class="w-16 h-16 bg-maroon/10 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-pie text-2xl text-maroon"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-apple-dark mb-4">Visualization</h3>
-                    <p class="text-apple-dark/60 mb-6">Tools for creating impactful visual stories</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Looker Studio</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Matplotlib</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Seaborn</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Excel</span>
-                    </div>
-                </div>
-                
-                <!-- Data Science -->
-                <div class="skill-card bg-white rounded-3xl p-8 shadow-sm">
-                    <div class="w-16 h-16 bg-maroon/10 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-brain text-2xl text-maroon"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-apple-dark mb-4">Data Science</h3>
-                    <p class="text-apple-dark/60 mb-6">Advanced analytics and machine learning</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Scikit-Learn</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">TensorFlow</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">Keras</span>
-                        <span class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark">PyTorch</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-apple-dark text-center mb-4">
-                    Featured Projects<span class="text-maroon">.</span>
-                </h2>
-                <p class="text-apple-dark/60 text-center mb-16 text-lg">Some of my recent work</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
-                <!-- Project 1: Flood Evacuation Route -->
-                <div class="project-card bg-apple-gray rounded-3xl overflow-hidden">
-                    <div class="h-48 overflow-hidden">
-                        <img src="assets/WebCilacap.png" alt="AI Rute Evakuasi Banjir Cilacap" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Machine Learning</span>
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Random Forest</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-apple-dark mb-3">AI Rute Evakuasi Banjir</h3>
-                        <p class="text-apple-dark/60 text-sm mb-4">
-                            Sistem rekomendasi jalur evakuasi ke shelter saat banjir di Kabupaten Cilacap. Menggunakan algoritma Random Forest untuk pemilihan rute optimal.
-                        </p>
-                        <a href="https://rizaledc.github.io/Rekomendasi-Rute-Evakuasi-Banjir-Cilacap/output/maps/peta_terintegrasi_satelit.html" target="_blank" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
-                            <span>View Project</span>
-                            <i class="fas fa-arrow-right text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2: Urban Farming Jakarta -->
-                <div class="project-card bg-apple-gray rounded-3xl overflow-hidden">
-                    <div class="h-48 overflow-hidden">
-                        <img src="assets/UrbanFarm.png" alt="Urban Farming Jakarta Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Data Visualization</span>
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Streamlit</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-apple-dark mb-3">Urban Farming Jakarta</h3>
-                        <p class="text-apple-dark/60 text-sm mb-4">
-                            Dashboard interaktif yang menyajikan data dan insight tentang pertanian perkotaan di Jakarta, lengkap dengan berita terkini seputar urban farming.
-                        </p>
-                        <a href="https://huggingface.co/spaces/rizalwp/UrbanFarming-Jakarta" target="_blank" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
-                            <span>View Project</span>
-                            <i class="fas fa-arrow-right text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3: Bali Tourism Visualization -->
-                <div class="project-card bg-apple-gray rounded-3xl overflow-hidden">
-                    <div class="h-48 overflow-hidden">
-                        <img src="assets/Wilcoxon.jpg" alt="Visualisasi Wisatawan Bali" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-maroon">Data Storytelling</span>
-                            <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-apple-dark/70">Visualization</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-apple-dark mb-3">Wisatawan Bali: Pra vs Pasca COVID</h3>
-                        <p class="text-apple-dark/60 text-sm mb-4">
-                            Analisis perbandingan tren kunjungan wisatawan Bali sebelum dan setelah pandemi COVID-19, dipublikasikan dalam jurnal ilmiah.
-                        </p>
-                        <a href="https://www.linkedin.com/posts/rizalwp_bali-pandemicimpact-datastorytelling-activity-7350329137296789505-Pu9D" target="_blank" class="inline-flex items-center gap-2 text-maroon font-semibold hover:gap-3 transition-all">
-                            <span>View on LinkedIn</span>
-                            <i class="fab fa-linkedin text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 bg-apple-gray">
-        <div class="max-w-6xl mx-auto px-6">
-            <div data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-apple-dark text-center mb-4">
-                    Experience<span class="text-maroon">.</span>
-                </h2>
-                <p class="text-apple-dark/60 text-center mb-16 text-lg">My professional journey</p>
-            </div>
-            
-            <!-- Main Highlight: Education -->
-            <div data-aos="fade-up" data-aos-delay="100" class="mb-12">
-                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
-                    <div class="flex flex-col md:flex-row md:items-center gap-6">
-                        <div class="w-20 h-20 bg-maroon/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-graduation-cap text-3xl text-maroon"></i>
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex flex-wrap items-center gap-3 mb-2">
-                                <h3 class="text-2xl md:text-3xl font-bold text-apple-dark">Telkom University</h3>
-                                <span class="bg-maroon text-white px-4 py-1 rounded-full text-sm font-semibold">GPA 3.92</span>
-                            </div>
-                            <p class="text-maroon font-semibold text-lg mb-2">S1 Sains Data • Semester 6</p>
-                            <p class="text-apple-dark/60 mb-4">Sedang menempuh pendidikan Sarjana dengan fokus pada Data Science, Machine Learning, dan Statistical Analysis.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="bg-maroon px-4 py-2 rounded-full text-sm font-medium text-white inline-flex items-center gap-2">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    Beasiswa APERTI BUMN 2023
-                                </span>
-                                <a href="https://drive.google.com/file/d/1VmupdN1py4E51WcHmH3j47A3mgwIq1ij/view" target="_blank" class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark inline-flex items-center gap-2 hover:bg-maroon hover:text-white transition-all">
-                                    <i class="fas fa-certificate"></i>
-                                    Data Analysis Bootcamp
-                                </a>
-                                <a href="https://drive.google.com/file/d/1Ql6b3TqwrpHMvU67kIyyx5qp6Su5B9HS/view" target="_blank" class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark inline-flex items-center gap-2 hover:bg-maroon hover:text-white transition-all">
-                                    <i class="fas fa-trophy"></i>
-                                    Mahasiswa Berprestasi
-                                </a>
-                                <a href="https://drive.google.com/file/d/1fyvbN5QWQyodeizYeKIlA5_TO-MfmOEj/view" target="_blank" class="bg-apple-gray px-4 py-2 rounded-full text-sm font-medium text-apple-dark inline-flex items-center gap-2 hover:bg-maroon hover:text-white transition-all">
-                                    <i class="fas fa-chalkboard-teacher"></i>
-                                    Asisten Praktikum
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Grid Cards -->
-            <div class="grid md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="200">
-                
-                <!-- Internship Card -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-briefcase text-xl text-maroon"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-apple-dark">Internship</h3>
-                    </div>
-                    <div class="space-y-4">
-                        <a href="https://drive.google.com/file/d/1UfONHZs7feTUWglvqaNUEIjcKREJAgVR/view" target="_blank" class="border-l-2 border-maroon/30 pl-4 block hover:border-maroon transition-all">
-                            <p class="font-semibold text-apple-dark hover:text-maroon">BPS Kabupaten Banyumas</p>
-                            <p class="text-sm text-maroon mb-1">Divisi Sosial</p>
-                            <p class="text-apple-dark/60 text-sm">Mengolah data program Desa Cantik untuk dashboard dan publikasi.</p>
-                        </a>
-                        <a href="https://drive.google.com/file/d/1dC9WvZyBTQExgdL3n5-Lny9IVeD9KHr9/view" target="_blank" class="border-l-2 border-maroon/30 pl-4 block hover:border-maroon transition-all">
-                            <p class="font-semibold text-apple-dark hover:text-maroon">Humas Telkom University Purwokerto</p>
-                            <p class="text-sm text-maroon mb-1">Student Staff</p>
-                            <p class="text-apple-dark/60 text-sm">Memantau traffic media sosial TikTok dan memproduksi konten.</p>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Projects Card -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-code text-xl text-maroon"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-apple-dark">Projects</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <a href="https://rizaledc.github.io/Rekomendasi-Rute-Evakuasi-Banjir-Cilacap/output/maps/peta_terintegrasi_satelit.html" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
-                            <i class="fas fa-route text-maroon mt-1"></i>
-                            <p class="text-apple-dark/80 text-sm hover:text-maroon">AI Jalur Evakuasi Bencana Banjir Kabupaten Cilacap</p>
-                        </a>
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-chart-line text-maroon mt-1"></i>
-                            <p class="text-apple-dark/80 text-sm">Forecasting Inflasi Indonesia dengan LSTM</p>
-                        </div>
-                        <a href="https://huggingface.co/spaces/rizalwp/UrbanFarming-Jakarta" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
-                            <i class="fas fa-leaf text-maroon mt-1"></i>
-                            <p class="text-apple-dark/80 text-sm hover:text-maroon">Website Interaktif Urban Farming Jakarta</p>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Organization Card -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-users text-xl text-maroon"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-apple-dark">Organization</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-user-tie text-maroon mt-1"></i>
+                        <div class="work-meta">
+                            <span class="num">03</span>
                             <div>
-                                <p class="text-apple-dark/80 text-sm font-medium">HR Staffing</p>
-                                <p class="text-apple-dark/60 text-xs">Himpunan Mahasiswa Sains Data</p>
+                                <h3>BLUD Pariwisata Banyumas</h3>
+                                <p>Public-sector web platform &middot; in progress</p>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p class="work-desc">Web platform for the Banyumas regional tourism agency, built with PHP and React + Vite.</p>
+                    </a>
+                </article>
+
+                <!-- 04 IEEE -->
+                <article class="work-card reveal">
+                    <a href="https://ieeexplore.ieee.org/document/11446355" target="_blank" rel="noopener" class="work-link">
+                        <div class="work-cover cover-paper" aria-hidden="true">
+                            <div class="paper">
+                                <span class="paper-venue">IEEE Xplore &middot; 2026</span>
+                                <span class="paper-title">Carbon Emission Potential Classification Using Ensemble Learning and Multi-Source Satellite Data</span>
+                                <span class="paper-lines"><i></i><i></i><i></i><i></i></span>
                             </div>
                         </div>
-                        <a href="https://drive.google.com/file/d/1NYCrCTBFlb6SY8Gdp5QfIurHBcDM_2bj/view" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
-                            <i class="fas fa-bullhorn text-maroon mt-1"></i>
+                        <div class="work-meta">
+                            <span class="num">04</span>
                             <div>
-                                <p class="text-apple-dark/80 text-sm font-medium hover:text-maroon">Student Roadshow</p>
-                                <p class="text-apple-dark/60 text-xs">Penerimaan Mahasiswa Baru Tel-U</p>
+                                <h3>Carbon Emission Classification</h3>
+                                <p>Research paper &middot; IEEE Xplore</p>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Research & Achievements Card -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-award text-xl text-maroon"></i>
+                            <i class="fas fa-arrow-right"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-apple-dark">Research & Achievements</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <a href="https://conferences.ittelkom-pwt.ac.id/index.php/centive/article/view/452" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
-                            <i class="fas fa-file-alt text-maroon mt-1"></i>
+                        <p class="work-desc">Ensemble learning on multi-source satellite data to classify carbon emission potential.</p>
+                    </a>
+                </article>
+
+                <!-- 05 Flood -->
+                <article class="work-card reveal">
+                    <a href="https://rizaledc.github.io/Rekomendasi-Rute-Evakuasi-Banjir-Cilacap/output/maps/peta_terintegrasi_satelit.html" target="_blank" rel="noopener" class="work-link">
+                        <div class="work-cover">
+                            <img src="assets/WebCilacap.webp" alt="Flood evacuation route map for Cilacap" loading="lazy">
+                        </div>
+                        <div class="work-meta">
+                            <span class="num">05</span>
                             <div>
-                                <p class="text-apple-dark/80 text-sm font-medium hover:text-maroon">Publikasi Jurnal</p>
-                                <p class="text-apple-dark/60 text-xs">Tingkat Kunjungan Wisatawan Bali (Uji Wilcoxon) - Penulis Pertama</p>
+                                <h3>Flood Evacuation Routing</h3>
+                                <p>Geospatial ML &middot; Cilacap</p>
                             </div>
-                        </a>
-                        <a href="https://drive.google.com/file/d/1fyvbN5QWQyodeizYeKIlA5_TO-MfmOEj/view" target="_blank" class="flex items-start gap-3 hover:text-maroon transition-all">
-                            <i class="fas fa-chalkboard-teacher text-maroon mt-1"></i>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p class="work-desc">Recommends evacuation routes to shelters during floods in Cilacap Regency, using Random Forest on satellite-based layers.</p>
+                    </a>
+                </article>
+
+                <!-- 06 Urban Farming -->
+                <article class="work-card reveal">
+                    <a href="https://huggingface.co/spaces/rizalwp/UrbanFarming-Jakarta" target="_blank" rel="noopener" class="work-link">
+                        <div class="work-cover">
+                            <img src="assets/UrbanFarm.webp" alt="Urban Farming Jakarta dashboard" loading="lazy">
+                        </div>
+                        <div class="work-meta">
+                            <span class="num">06</span>
                             <div>
-                                <p class="text-apple-dark/80 text-sm font-medium hover:text-maroon">Asisten Praktikum</p>
-                                <p class="text-apple-dark/60 text-xs">Mata Kuliah Struktur Data</p>
+                                <h3>Urban Farming Jakarta</h3>
+                                <p>Interactive dashboard &middot; Streamlit</p>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p class="work-desc">Data and insight on urban agriculture in Jakarta, with a feed of the latest urban-farming news.</p>
+                    </a>
+                </article>
+
+                <!-- 07 Bali -->
+                <article class="work-card reveal">
+                    <a href="https://conferences.ittelkom-pwt.ac.id/index.php/centive/article/view/452" target="_blank" rel="noopener" class="work-link">
+                        <div class="work-cover">
+                            <img src="assets/Wilcoxon.webp" alt="Bali tourist arrivals before and after COVID-19" loading="lazy">
+                        </div>
+                        <div class="work-meta">
+                            <span class="num">07</span>
+                            <div>
+                                <h3>Bali Tourism, Pre vs Post COVID</h3>
+                                <p>Journal paper &middot; first author</p>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p class="work-desc">Wilcoxon signed-rank analysis of Bali tourist arrivals before and after the pandemic.</p>
+                    </a>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact Section -->
-    <footer id="contact" class="bg-maroon py-24">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                    Let's work together<span class="text-white/60">.</span>
-                </h2>
-                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
-                    Ready to transform your data into actionable insights? Let's discuss how I can help your business grow.
-                </p>
+    <!-- ============ RESEARCH / MODELS ============ -->
+    <section class="section section-tint" id="research">
+        <div class="container">
+            <div class="section-head reveal">
+                <h2 class="section-title">Models &amp; research</h2>
+                <span class="rule"></span>
+                <span class="section-note">4 published studies &middot; 1 in IEEE Xplore</span>
             </div>
-            
-            <div class="flex flex-wrap justify-center gap-6 mb-16" data-aos="fade-up" data-aos-delay="100">
-                <a href="mailto:rizalwahp1804@gmail.com" class="bg-white/10 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-maroon transition-all inline-flex items-center gap-3">
-                    <i class="fas fa-envelope"></i>
-                    <span>rizalwahp1804@gmail.com</span>
-                </a>
-                <a href="https://wa.me/6282145782083" target="_blank" class="bg-white/10 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-maroon transition-all inline-flex items-center gap-3">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
+            <div class="metric-grid">
+                <div class="metric reveal">
+                    <span class="metric-value">0.87</span>
+                    <span class="metric-unit">macro F1</span>
+                    <h3>Fine-tuned IndoBERT</h3>
+                    <p>Sentiment classification on 16,950 Indonesian app reviews.</p>
+                </div>
+                <div class="metric reveal">
+                    <span class="metric-value">0.94</span>
+                    <span class="metric-unit">F1 score</span>
+                    <h3>GA-tuned Random Forest</h3>
+                    <p>Genetic-algorithm hyperparameter search for heart-disease prediction.</p>
+                </div>
+                <div class="metric reveal">
+                    <span class="metric-value">IEEE</span>
+                    <span class="metric-unit">Xplore 2026</span>
+                    <h3>Ensemble + satellite data</h3>
+                    <p>Carbon emission potential from multi-source satellite imagery.</p>
+                </div>
+                <div class="metric reveal">
+                    <span class="metric-value">LSTM</span>
+                    <span class="metric-unit">time series</span>
+                    <h3>Inflation forecasting</h3>
+                    <p>Sequence model forecasting Indonesia's inflation rate.</p>
+                </div>
             </div>
-            
-            <!-- Social Links -->
-            <div class="flex justify-center gap-6 mb-12" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://www.linkedin.com/in/rizalwp" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
-                    <i class="fab fa-linkedin-in text-xl"></i>
-                </a>
-                <a href="https://github.com/rizaledc" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
-                    <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="https://instagram.com/rizal.edc" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-maroon transition-all">
-                    <i class="fab fa-instagram text-xl"></i>
-                </a>
+        </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section" id="achievements">
+        <div class="container">
+            <div class="section-head reveal">
+                <h2 class="section-title">Awards &amp; recognition</h2>
+                <span class="rule"></span>
             </div>
-            
-            <!-- Copyright -->
-            <div class="text-center text-white/60" data-aos="fade-up" data-aos-delay="300">
-                <p>&copy; 2026 Rizal Wahyu Pratama. All rights reserved.</p>
+            <ol class="award-list">
+                <li class="award reveal">
+                    <span class="award-year">2026</span>
+                    <div class="award-main">
+                        <h3>Winner, AI·AX Track</h3>
+                        <p>MAJU:ON Hackathon 2026–27 &middot; SK Innovation &times; UD Impact</p>
+                    </div>
+                    <span class="award-badge">IDR 50M</span>
+                </li>
+                <li class="award reveal">
+                    <span class="award-year">2026</span>
+                    <div class="award-main">
+                        <h3>1st Place, Sobat Competition</h3>
+                        <p>United Tractors &middot; with Orbitani, one of 3 national awards this year</p>
+                    </div>
+                    <span class="award-badge">1st</span>
+                </li>
+                <li class="award reveal">
+                    <a href="https://drive.google.com/file/d/1Ql6b3TqwrpHMvU67kIyyx5qp6Su5B9HS/view" target="_blank" rel="noopener">
+                        <span class="award-year">2025</span>
+                        <div class="award-main">
+                            <h3>Outstanding Student (Mahasiswa Berprestasi)</h3>
+                            <p>Data Science study program, Telkom University</p>
+                        </div>
+                        <span class="award-badge"><i class="fas fa-arrow-right ne"></i></span>
+                    </a>
+                </li>
+                <li class="award reveal">
+                    <span class="award-year">2024</span>
+                    <div class="award-main">
+                        <h3>1st Place, T-Arts Competition</h3>
+                        <p>Universitas Atma Jaya Yogyakarta &middot; creative video on information systems</p>
+                    </div>
+                    <span class="award-badge">1st</span>
+                </li>
+                <li class="award reveal">
+                    <span class="award-year">2023</span>
+                    <div class="award-main">
+                        <h3>Full Scholarship, APERTI BUMN</h3>
+                        <p>Bachelor's degree in Data Science, Telkom University</p>
+                    </div>
+                    <span class="award-badge"><i class="fas fa-graduation-cap"></i></span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT / EDUCATION / SKILLS ============ -->
+    <section class="section section-tint" id="about">
+        <div class="container about-grid">
+            <div class="about-intro reveal">
+                <p class="kicker"><span class="spark">✦</span> About me</p>
+                <h2 class="display about-title">From model<br>to <span class="accent">production</span>.</h2>
+                <p>I'm a Data Science student at Telkom University (GPA 3.93, graduating February 2027) working toward an AI Engineer role. I like the part where a model stops being a notebook and becomes something people use.</p>
+                <p>Most of my work sits where machine learning meets satellite and spatial data: classifying land and emissions from imagery, building APIs around those models, and giving them an agentic layer that can reason over the results.</p>
+                <p>I'm looking for full-time <strong>AI Engineer</strong> or <strong>Data Engineer</strong> roles in Jakarta or Bali, on-site, hybrid or remote.</p>
+            </div>
+
+            <div class="about-side">
+                <div class="card edu reveal">
+                    <h3 class="card-label">Education</h3>
+                    <div class="edu-row">
+                        <div>
+                            <p class="edu-title">B.Sc. Data Science</p>
+                            <p class="edu-sub">Telkom University, Purwokerto</p>
+                        </div>
+                        <span class="edu-date">2023 – Feb 2027</span>
+                    </div>
+                    <div class="edu-chips">
+                        <span>GPA 3.93 / 4.00</span>
+                        <span>APERTI BUMN scholar</span>
+                    </div>
+                    <div class="edu-row edu-row-sm">
+                        <div>
+                            <p class="edu-title">Digicamp 1: From Pixels to Smart Systems</p>
+                            <p class="edu-sub">Digistar Club by Telkom Indonesia &middot; CNNs to deployed apps</p>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1VmupdN1py4E51WcHmH3j47A3mgwIq1ij/view" target="_blank" rel="noopener" class="edu-row edu-row-sm edu-link">
+                        <div>
+                            <p class="edu-title">Data Analysis Bootcamp</p>
+                            <p class="edu-sub">Certificate</p>
+                        </div>
+                        <i class="fas fa-arrow-right ne"></i>
+                    </a>
+                </div>
+
+                <div class="card reveal">
+                    <h3 class="card-label">Tools &amp; technologies</h3>
+                    <ul class="tool-grid">
+                        <li><span class="mono">Py</span>Python</li>
+                        <li><span class="mono">Fa</span>FastAPI</li>
+                        <li><span class="mono">Ag</span>AI Agents</li>
+                        <li><span class="mono">Ee</span>Earth Engine</li>
+                        <li><span class="mono">Re</span>React</li>
+                        <li><span class="mono">Sq</span>SQL</li>
+                        <li><span class="mono">Sk</span>scikit-learn</li>
+                        <li><span class="mono">Lg</span>LightGBM</li>
+                        <li><span class="mono">Hf</span>IndoBERT</li>
+                        <li><span class="mono">Sh</span>SHAP</li>
+                        <li><span class="mono">Tf</span>TensorFlow</li>
+                        <li><span class="mono">St</span>Streamlit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="process">
+        <div class="container">
+            <div class="section-head reveal">
+                <h2 class="section-title">How I work</h2>
+                <span class="rule"></span>
+            </div>
+            <ol class="process">
+                <li class="reveal"><span class="num">01</span><i class="fas fa-magnifying-glass"></i><h3>Frame</h3><p>Pin down the decision the model has to support, and what data can answer it.</p></li>
+                <li class="reveal"><span class="num">02</span><i class="fas fa-satellite"></i><h3>Collect</h3><p>Build pipelines from satellite, spatial and tabular sources with Earth Engine and SQL.</p></li>
+                <li class="reveal"><span class="num">03</span><i class="fas fa-diagram-project"></i><h3>Model</h3><p>Train, tune and explain with LightGBM, IndoBERT and SHAP.</p></li>
+                <li class="reveal"><span class="num">04</span><i class="fas fa-code"></i><h3>Ship</h3><p>Wrap it in FastAPI and React, with agentic workflows on top.</p></li>
+                <li class="reveal"><span class="num">05</span><i class="fas fa-rocket"></i><h3>Iterate</h3><p>Measure with real users and keep improving what's in production.</p></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section-tint" id="experience">
+        <div class="container exp-grid">
+            <div class="reveal">
+                <div class="section-head section-head-stack">
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                <p class="exp-intro">Building products, working with public-sector data, and helping run campus programmes.</p>
+            </div>
+            <ol class="timeline">
+                <li class="reveal">
+                    <p class="tl-org">Orbitani</p>
+                    <h3>Builder &middot; AI &amp; Geospatial Platform</h3>
+                    <p>Designed and shipped the platform end to end: FastAPI backend, React frontend, Earth Engine data layer and an agentic AI for land analysis.</p>
+                </li>
+                <li class="reveal">
+                    <p class="tl-org">BLUD Pariwisata Kabupaten Banyumas</p>
+                    <h3>Web Platform Developer</h3>
+                    <p>Building the agency's web platform with PHP and React + Vite.</p>
+                </li>
+                <li class="reveal">
+                    <a href="https://drive.google.com/file/d/1UfONHZs7feTUWglvqaNUEIjcKREJAgVR/view" target="_blank" rel="noopener">
+                        <p class="tl-org">BPS Kabupaten Banyumas <i class="fas fa-arrow-right ne"></i></p>
+                        <h3>Data Intern &middot; Social Statistics</h3>
+                        <p>Processed data from the Desa Cantik programme for dashboards and official publications.</p>
+                    </a>
+                </li>
+                <li class="reveal">
+                    <a href="https://drive.google.com/file/d/1fyvbN5QWQyodeizYeKIlA5_TO-MfmOEj/view" target="_blank" rel="noopener">
+                        <p class="tl-org">Telkom University <i class="fas fa-arrow-right ne"></i></p>
+                        <h3>Teaching Assistant &middot; Data Structures</h3>
+                        <p>Ran lab sessions and helped students debug their implementations.</p>
+                    </a>
+                </li>
+                <li class="reveal">
+                    <a href="https://drive.google.com/file/d/1dC9WvZyBTQExgdL3n5-Lny9IVeD9KHr9/view" target="_blank" rel="noopener">
+                        <p class="tl-org">Public Relations, Telkom University Purwokerto <i class="fas fa-arrow-right ne"></i></p>
+                        <h3>Student Staff</h3>
+                        <p>Tracked TikTok traffic and produced content for the campus channels.</p>
+                    </a>
+                </li>
+                <li class="reveal">
+                    <p class="tl-org">Data Science Student Association &middot; Telkom University</p>
+                    <h3>HR Staff &amp; Student Roadshow</h3>
+                    <p>Supported member staffing and represented the university in new-student roadshows.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="cta reveal">
+                <div class="cta-left">
+                    <h2 class="display cta-title">Let's build<br>something<br><span class="accent">intelligent</span>.</h2>
+                    <p>Open to full-time AI Engineer or Data Engineer roles, collaborations, and geospatial AI projects.</p>
+                    <a href="mailto:hello.rizalwahyu@gmail.com" class="btn btn-dark">Email me <i class="fas fa-arrow-right ne"></i></a>
+                </div>
+                <ul class="contact-list">
+                    <li><a href="mailto:hello.rizalwahyu@gmail.com"><span class="ci"><i class="fas fa-envelope"></i></span>hello.rizalwahyu@gmail.com</a></li>
+                    <li><a href="https://wa.me/6282145782083" target="_blank" rel="noopener"><span class="ci"><i class="fab fa-whatsapp"></i></span>+62 821 4578 2083</a></li>
+                    <li><a href="https://www.linkedin.com/in/rizalwp" target="_blank" rel="noopener"><span class="ci"><i class="fab fa-linkedin-in"></i></span>linkedin.com/in/rizalwp</a></li>
+                    <li><span class="ci"><i class="fas fa-location-dot"></i></span>Purwokerto, Central Java</li>
+                </ul>
+                <div class="cta-quote">
+                    <span class="quote-mark">&ldquo;</span>
+                    <p>Help teams take ML features from model to production.</p>
+                    <span class="signature">Rizal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year">2026</span> Rizal Wahyu Pratama</p>
+            <div class="socials">
+                <span>Let's connect</span>
+                <a href="https://www.linkedin.com/in/rizalwp" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/rizaledc" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/rizal.edc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:hello.rizalwahyu@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- AOS Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Main JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
-
